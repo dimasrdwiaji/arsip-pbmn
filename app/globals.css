@@ -1,0 +1,88 @@
+@import "primereact/resources/themes/lara-light-amber/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-japandi: #FAF9F5;
+  --surface-card: #FFFFFF;
+  --border-japandi: #E7E5DF;
+  --text-charcoal: #2D323A;
+  --text-muted: #6C727E;
+  --pu-soft-blue: #3B82F6;
+  --pu-soft-yellow: #F59E0B;
+}
+
+body {
+  background-color: var(--bg-japandi);
+  color: var(--text-charcoal);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom PrimeReact aesthetic tweaks for Japandi theme */
+.p-component {
+  font-family: inherit !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #F5F4EE !important;
+  color: #4A505C !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 1px solid #E7E5DF !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background-color: #FFFFFF !important;
+  color: #2D323A !important;
+  border-bottom: 1px solid #F0EFEA !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #F8F7F2 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 0.75rem 1rem !important;
+  font-size: 0.8125rem !important;
+}
+
+.p-dialog .p-dialog-header {
+  background-color: #FAF9F5 !important;
+  border-bottom: 1px solid #E7E5DF !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.p-dialog .p-dialog-content {
+  background-color: #FFFFFF !important;
+  padding: 1.5rem !important;
+}
+
+.p-button {
+  border-radius: 0.75rem !important;
+  font-weight: 600 !important;
+  font-size: 0.8125rem !important;
+}
+
+.p-inputtext {
+  border-radius: 0.625rem !important;
+  border-color: #E7E5DF !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 0.875rem !important;
+}
+
+.p-inputtext:focus {
+  border-color: #F59E0B !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15) !important;
+}

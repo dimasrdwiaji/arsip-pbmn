@@ -1,0 +1,3 @@
+# 5. Desain Sistem Antarmuka: Mobile-First, PrimeReact, dan Estetika Japandi dengan Aksen Soft PUPR
+
+Antarmuka E-Arsip Biro PBMN dirancang dengan pendekatan *mobile-first* menggunakan pustaka komponen **PrimeReact** dengan tema *light mode* yang mengusung estetika **Japandi** (perpaduan minimalis Jepang dan fungsionalitas Skandinavia: latar bernuansa *warm off-white/linen*, tipografi bersih arang *charcoal*, spasi lapang, dan aksen *soft* biru dan *soft* kuning khas Kementerian PUPR secara selektif pada elemen penting seperti judul utama, *badge* status, dan tombol aksi). Keputusan ini diambil untuk memberikan pengalaman pengguna yang tenang, rapi, mudah dibaca (*high readability*), dan nyaman digunakan di layar ponsel cerdas maupun monitor meja kerja staf.
