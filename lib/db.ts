@@ -1,6 +1,8 @@
 import { createClient, Client } from "@libsql/client";
 import path from "path";
 import fs from "fs";
+import os from "os";
+import seedArchives from "@/data/seed-archives.json";
 
 let dbInstance: Client | null = null;
 let isInitialized = false;
@@ -10,15 +12,25 @@ export function getDatabase(): Client {
     return dbInstance;
   }
 
-  // Jika di Vercel atau produksi menggunakan Turso Cloud URL, pakai itu.
-  // Jika tidak ada TURSO_DATABASE_URL, fallback ke file lokal data/arsip.db
-  const url = process.env.TURSO_DATABASE_URL || "file:data/arsip.db";
+  const tursoUrl = process.env.TURSO_DATABASE_URL;
   const authToken = process.env.TURSO_AUTH_TOKEN;
 
-  if (url.startsWith("file:")) {
-    const dataDir = path.join(process.cwd(), "data");
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+  let url = tursoUrl;
+
+  if (!url) {
+    // Deteksi lingkungan Vercel serverless / AWS Lambda
+    const isServerless = process.env.VERCEL === "1" || !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+
+    if (isServerless) {
+      // Di Vercel Serverless, hanya direktori /tmp yang diizinkan untuk read/write
+      const dbPath = path.join(os.tmpdir(), "arsip.db");
+      url = `file:${dbPath}`;
+    } else {
+      const dataDir = path.join(process.cwd(), "data");
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+      url = `file:${path.join(dataDir, "arsip.db")}`;
     }
   }
 
@@ -94,6 +106,50 @@ export async function ensureDbInitialized(): Promise<void> {
       sql: "INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)",
       args: ["petugas", "petugas123", "Arsiparis PMH", "OPERATOR"],
     });
+  }
+
+  // Auto-seeding arsip jika tabel kosong (misal pertama kali deploy di Vercel / serverless / Turso)
+  const archiveCount = await db.execute("SELECT COUNT(*) as count FROM archives");
+  if (Number(archiveCount.rows[0]?.count || 0) === 0 && Array.isArray(seedArchives) && seedArchives.length > 0) {
+    console.log(`Auto-seeding ${seedArchives.length} rekaman arsip ke database...`);
+    
+    const batchStatements = seedArchives.map((item: any) => ({
+      sql: `INSERT INTO archives (
+        id, no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
+        status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      args: [
+        item.id,
+        item.no_berkas || "1",
+        item.no_urut || "1",
+        item.kode || "-",
+        item.judul || "-",
+        item.uraian || "-",
+        item.tahun || 2020,
+        item.jumlah || "1 berkas",
+        item.status_fisik || "ASLI",
+        item.box || "BOX 1",
+        item.skkaad || "Terbuka",
+        item.lokasi || "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
+        item.rubrik || "UMUM",
+        item.jenis_arsip || "INAKTIF",
+        item.file_url || null,
+        item.status_siklus || "DALAM_RETENSI",
+      ],
+    }));
+
+    const chunkSize = 100;
+    for (let i = 0; i < batchStatements.length; i += chunkSize) {
+      const chunk = batchStatements.slice(i, i + chunkSize);
+      await db.batch(chunk, "write");
+    }
+
+    await db.execute({
+      sql: "INSERT INTO audit_logs (username, action, details) VALUES ('SYSTEM', 'AUTO_SEED', ?)",
+      args: [`Berhasil menginisialisasi ${seedArchives.length} arsip awal`],
+    });
+
+    console.log(`Auto-seeding selesai: ${seedArchives.length} arsip terdaftar.`);
   }
 
   isInitialized = true;
