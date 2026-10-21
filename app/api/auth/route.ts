@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const { username, password } = await req.json();
 
-    const user = db.prepare("SELECT id, username, nama_lengkap, role, password FROM users WHERE username = ?").get(username) as any;
+    const res = await db.execute({
+      sql: "SELECT id, username, nama_lengkap, role, password FROM users WHERE username = ?",
+      args: [username],
+    });
+    const user = res.rows[0] as any;
 
     if (!user || user.password !== password) {
       return NextResponse.json({ success: false, message: "Username atau password salah" }, { status: 401 });

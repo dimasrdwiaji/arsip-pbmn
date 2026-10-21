@@ -1,9 +1,10 @@
 import path from "path";
 import fs from "fs";
 import * as XLSX from "xlsx";
-import { getDatabase } from "./db";
+import { getDatabase, ensureDbInitialized } from "./db";
 
-export function importExcelToDatabase(filePath?: string): { success: boolean; totalImported: number; message: string } {
+export async function importExcelToDatabase(filePath?: string): Promise<{ success: boolean; totalImported: number; message: string }> {
+  await ensureDbInitialized();
   const db = getDatabase();
   const targetFile = filePath || path.join(process.cwd(), "DAFTAR ARSIP INAKTIF_PMH BMN.xlsx");
 
@@ -18,127 +19,120 @@ export function importExcelToDatabase(filePath?: string): { success: boolean; to
     { name: "DAFTAR ARSIP BU KARO", jenis: "AKTIF", defaultRubrik: "TATA KELOLA & PIMPINAN" },
   ];
 
+  const batchStatements: any[] = [];
+  batchStatements.push({ sql: "DELETE FROM archives", args: [] });
+
   let totalImported = 0;
 
-  const insertStmt = db.prepare(`
-    INSERT INTO archives (
-      no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
-      status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, status_siklus
-    ) VALUES (
-      @no_berkas, @no_urut, @kode, @judul, @uraian, @tahun, @jumlah,
-      @status_fisik, @box, @skkaad, @lokasi, @rubrik, @jenis_arsip, 'DALAM_RETENSI'
-    )
-  `);
+  for (const sheetInfo of sheetsToImport) {
+    const sheet = workbook.Sheets[sheetInfo.name];
+    if (!sheet) continue;
 
-  const runTransaction = db.transaction(() => {
-    // Kosongkan tabel dulu jika re-impor penuh
-    db.prepare("DELETE FROM archives").run();
+    const rawRows: any[][] = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
+    let currentSection = sheetInfo.defaultRubrik;
+    let lastKnownBox = "BOX 1";
+    let lastKnownLokasi = "Lt.4 Gedung Menteri PU, Ruang Kerja Bagian PMH BMN";
 
-    for (const sheetInfo of sheetsToImport) {
-      const sheet = workbook.Sheets[sheetInfo.name];
-      if (!sheet) continue;
+    for (let r = 0; r < rawRows.length; r++) {
+      const row = rawRows[r];
+      if (!row || row.length === 0) continue;
 
-      const rawRows: any[][] = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
-      let currentSection = sheetInfo.defaultRubrik;
-      let lastKnownBox = "BOX 1";
-      let lastKnownLokasi = "Lt.4 Gedung Menteri PU, Ruang Kerja Bagian PMH BMN";
+      const col0 = String(row[0] || "").trim();
+      const col1 = String(row[1] || "").trim();
+      const col2 = String(row[2] || "").trim();
+      const col3 = String(row[3] || "").trim();
+      const col4 = String(row[4] || "").trim();
+      const col5 = String(row[5] || "").trim();
+      const col6 = String(row[6] || "").trim();
+      const col7 = String(row[7] || "").trim();
+      const col8 = String(row[8] || "").trim();
+      const col9 = String(row[9] || "").trim();
+      const col10 = String(row[10] || "").trim();
 
-      for (let r = 0; r < rawRows.length; r++) {
-        const row = rawRows[r];
-        if (!row || row.length === 0) continue;
-
-        const col0 = String(row[0] || "").trim();
-        const col1 = String(row[1] || "").trim();
-        const col2 = String(row[2] || "").trim();
-        const col3 = String(row[3] || "").trim();
-        const col4 = String(row[4] || "").trim();
-        const col5 = String(row[5] || "").trim();
-        const col6 = String(row[6] || "").trim();
-        const col7 = String(row[7] || "").trim();
-        const col8 = String(row[8] || "").trim();
-        const col9 = String(row[9] || "").trim();
-        const col10 = String(row[10] || "").trim();
-
-        // Lewati baris judul atas / header
-        if (
-          col0.startsWith("DAFTAR ARSIP") ||
-          col0.startsWith("UNIT KERJA") ||
-          col0.startsWith("TAHUN ..") ||
-          col0 === "NO BERKAS" ||
-          col7 === "ASLI/COPY"
-        ) {
-          continue;
-        }
-
-        // Cek jika ini baris header section rubrik (misal: "SENGKETA LAHAN", "TAHUN 2002", "BAST ALIH STATUS")
-        const isSectionHeader =
-          col0 &&
-          !col1 &&
-          !col2 &&
-          !col4 &&
-          (isNaN(Number(col0)) || col0.toUpperCase().includes("TAHUN") || col0.toUpperCase().includes("SURAT"));
-
-        if (isSectionHeader) {
-          currentSection = col0;
-          continue;
-        }
-
-        // Baris data valid harus memiliki judul atau uraian
-        if (!col3 && !col4) continue;
-
-        // Parse tahun
-        let tahunVal = parseInt(col5, 10);
-        if (isNaN(tahunVal) || tahunVal < 1950 || tahunVal > 2099) {
-          // Cari angka 4 digit di uraian atau judul jika kolom tahun kosong
-          const matchYear = (col4 + " " + col3).match(/\b(19\d\d|20\d\d)\b/);
-          tahunVal = matchYear ? parseInt(matchYear[1], 10) : 2020;
-        }
-
-        const boxVal = col8 || lastKnownBox;
-        if (col8) lastKnownBox = col8;
-
-        const lokasiVal = col10 || lastKnownLokasi;
-        if (col10) lastKnownLokasi = col10;
-
-        let skkaadVal = col9 || "Terbuka";
-        if (skkaadVal.toUpperCase().includes("BATAS")) skkaadVal = "Terbatas";
-        else if (skkaadVal.toUpperCase().includes("RAHASIA")) skkaadVal = "Rahasia";
-        else skkaadVal = "Terbuka";
-
-        let statusFisik = col7.toUpperCase().includes("COPY") ? "COPY" : "ASLI";
-
-        insertStmt.run({
-          no_berkas: col0 || "1",
-          no_urut: col1 || "1",
-          kode: col2 || "-",
-          judul: col3 || col4.substring(0, 80),
-          uraian: col4 || col3,
-          tahun: tahunVal,
-          jumlah: col6 || "1 berkas",
-          status_fisik: statusFisik,
-          box: boxVal,
-          skkaad: skkaadVal,
-          lokasi: lokasiVal,
-          rubrik: currentSection,
-          jenis_arsip: sheetInfo.jenis,
-        });
-
-        totalImported++;
+      if (
+        col0.startsWith("DAFTAR ARSIP") ||
+        col0.startsWith("UNIT KERJA") ||
+        col0.startsWith("TAHUN ..") ||
+        col0 === "NO BERKAS" ||
+        col7 === "ASLI/COPY"
+      ) {
+        continue;
       }
+
+      const isSectionHeader =
+        col0 &&
+        !col1 &&
+        !col2 &&
+        !col4 &&
+        (isNaN(Number(col0)) || col0.toUpperCase().includes("TAHUN") || col0.toUpperCase().includes("SURAT"));
+
+      if (isSectionHeader) {
+        currentSection = col0;
+        continue;
+      }
+
+      if (!col3 && !col4) continue;
+
+      let tahunVal = parseInt(col5, 10);
+      if (isNaN(tahunVal) || tahunVal < 1950 || tahunVal > 2099) {
+        const matchYear = (col4 + " " + col3).match(/\b(19\d\d|20\d\d)\b/);
+        tahunVal = matchYear ? parseInt(matchYear[1], 10) : 2020;
+      }
+
+      const boxVal = col8 || lastKnownBox;
+      if (col8) lastKnownBox = col8;
+
+      const lokasiVal = col10 || lastKnownLokasi;
+      if (col10) lastKnownLokasi = col10;
+
+      let skkaadVal = col9 || "Terbuka";
+      if (skkaadVal.toUpperCase().includes("BATAS")) skkaadVal = "Terbatas";
+      else if (skkaadVal.toUpperCase().includes("RAHASIA")) skkaadVal = "Rahasia";
+      else skkaadVal = "Terbuka";
+
+      let statusFisik = col7.toUpperCase().includes("COPY") ? "COPY" : "ASLI";
+
+      batchStatements.push({
+        sql: `INSERT INTO archives (
+          no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
+          status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, status_siklus
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI')`,
+        args: [
+          col0 || "1",
+          col1 || "1",
+          col2 || "-",
+          col3 || col4.substring(0, 80),
+          col4 || col3,
+          tahunVal,
+          col6 || "1 berkas",
+          statusFisik,
+          boxVal,
+          skkaadVal,
+          lokasiVal,
+          currentSection,
+          sheetInfo.jenis,
+        ],
+      });
+
+      totalImported++;
     }
+  }
+
+  // Jalankan dalam potongan batch (chunks) 100 statements agar aman di semua protokol
+  const chunkSize = 100;
+  for (let i = 0; i < batchStatements.length; i += chunkSize) {
+    const chunk = batchStatements.slice(i, i + chunkSize);
+    await db.batch(chunk, "write");
+  }
+
+  await db.execute({
+    sql: "INSERT INTO audit_logs (username, action, details) VALUES ('SYSTEM', 'IMPORT_EXCEL', ?)",
+    args: [`Berhasil mengimpor ${totalImported} berkas arsip dari spreadsheet`],
   });
-
-  runTransaction();
-
-  // Audit log
-  db.prepare(`
-    INSERT INTO audit_logs (username, action, details)
-    VALUES ('SYSTEM', 'IMPORT_EXCEL', ?)
-  `).run(`Berhasil mengimpor ${totalImported} berkas arsip dari spreadsheet`);
 
   return {
     success: true,
     totalImported,
-    message: `Berhasil mengimpor ${totalImported} berkas arsip ke database lokal.`,
+    message: `Berhasil mengimpor ${totalImported} berkas arsip ke database.`,
   };
 }

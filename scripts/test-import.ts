@@ -1,13 +1,17 @@
-import { getDatabase } from "../lib/db";
 import { importExcelToDatabase } from "../lib/importer";
+import { getDatabase, ensureDbInitialized } from "../lib/db";
 
-console.log("Memulai import data Excel...");
-const result = importExcelToDatabase();
-console.log("Hasil Import:", result);
+async function run() {
+  console.log("Memulai import data Excel...");
+  const result = await importExcelToDatabase();
+  console.log("Hasil Import:", result);
 
-const db = getDatabase();
-const total = db.prepare("SELECT COUNT(*) as count FROM archives").get() as { count: number };
-console.log("Total baris tersimpan di SQLite:", total.count);
+  const db = getDatabase();
+  const total = await db.execute("SELECT COUNT(*) as count FROM archives");
+  console.log("Total baris tersimpan:", total.rows[0]);
 
-const samples = db.prepare("SELECT id, no_berkas, kode, judul, tahun, box, skkaad FROM archives LIMIT 5").all();
-console.log("Contoh 5 data teratas:", samples);
+  const samples = await db.execute("SELECT id, no_berkas, kode, judul, tahun, box, skkaad FROM archives LIMIT 5");
+  console.log("Contoh 5 data teratas:", samples.rows);
+}
+
+run().catch(console.error);

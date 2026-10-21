@@ -1,28 +1,41 @@
-import Database from "better-sqlite3";
+import { createClient, Client } from "@libsql/client";
 import path from "path";
 import fs from "fs";
 
-let dbInstance: Database.Database | null = null;
+let dbInstance: Client | null = null;
+let isInitialized = false;
 
-export function getDatabase(): Database.Database {
+export function getDatabase(): Client {
   if (dbInstance) {
     return dbInstance;
   }
 
-  const dataDir = path.join(process.cwd(), "data");
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+  // Jika di Vercel atau produksi menggunakan Turso Cloud URL, pakai itu.
+  // Jika tidak ada TURSO_DATABASE_URL, fallback ke file lokal data/arsip.db
+  const url = process.env.TURSO_DATABASE_URL || "file:data/arsip.db";
+  const authToken = process.env.TURSO_AUTH_TOKEN;
+
+  if (url.startsWith("file:")) {
+    const dataDir = path.join(process.cwd(), "data");
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
   }
 
-  const dbPath = path.join(dataDir, "arsip.db");
-  const db = new Database(dbPath);
+  const client = createClient({
+    url,
+    authToken,
+  });
 
-  // Optimasi performa SQLite
-  db.pragma("journal_mode = WAL");
-  db.pragma("foreign_keys = ON");
+  dbInstance = client;
+  return dbInstance;
+}
 
-  // Inisialisasi Skema Tabel
-  db.exec(`
+export async function ensureDbInitialized(): Promise<void> {
+  if (isInitialized) return;
+  const db = getDatabase();
+
+  await db.executeMultiple(`
     CREATE TABLE IF NOT EXISTS archives (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       no_berkas TEXT,
@@ -70,17 +83,18 @@ export function getDatabase(): Database.Database {
     CREATE INDEX IF NOT EXISTS idx_archives_skkaad ON archives(skkaad);
   `);
 
-  // Seed default users jika belum ada
-  const userCount = db.prepare("SELECT COUNT(*) as count FROM users").get() as { count: number };
-  if (userCount.count === 0) {
-    const insertUser = db.prepare(`
-      INSERT INTO users (username, password, nama_lengkap, role)
-      VALUES (?, ?, ?, ?)
-    `);
-    insertUser.run("admin", "admin123", "Administrator PBMN", "ADMIN");
-    insertUser.run("petugas", "petugas123", "Arsiparis PMH", "OPERATOR");
+  // Pastikan user admin dan petugas ada
+  const userCount = await db.execute("SELECT COUNT(*) as count FROM users");
+  if (Number(userCount.rows[0]?.count || 0) === 0) {
+    await db.execute({
+      sql: "INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)",
+      args: ["admin", "admin123", "Administrator PBMN", "ADMIN"],
+    });
+    await db.execute({
+      sql: "INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)",
+      args: ["petugas", "petugas123", "Arsiparis PMH", "OPERATOR"],
+    });
   }
 
-  dbInstance = db;
-  return dbInstance;
+  isInitialized = true;
 }

@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,12 +15,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: "File PDF tidak ditemukan" }, { status: 400 });
     }
 
-    // Validasi tipe file PDF
     if (!file.name.toLowerCase().endsWith(".pdf") && file.type !== "application/pdf") {
       return NextResponse.json({ success: false, message: "Hanya file PDF yang diperbolehkan" }, { status: 400 });
     }
 
-    // Batas 25MB
     if (file.size > 25 * 1024 * 1024) {
       return NextResponse.json({ success: false, message: "Ukuran file melebihi batas 25 MB" }, { status: 400 });
     }
@@ -26,28 +26,40 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const uploadsDir = path.join(process.cwd(), "public", "uploads");
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
+    // Pada Vercel serverless, gunakan /tmp/uploads jika direktori publik lokal read-only
+    let uploadsDir = path.join(process.cwd(), "public", "uploads");
+    let fileUrlPrefix = "/uploads";
+
+    try {
+      if (!fs.existsSync(uploadsDir)) {
+        fs.mkdirSync(uploadsDir, { recursive: true });
+      }
+    } catch (e) {
+      uploadsDir = path.join("/tmp", "uploads");
+      fileUrlPrefix = "/uploads";
+      if (!fs.existsSync(uploadsDir)) {
+        fs.mkdirSync(uploadsDir, { recursive: true });
+      }
     }
 
-    // Nama file unik
     const safeName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
     const filePath = path.join(uploadsDir, safeName);
     fs.writeFileSync(filePath, buffer);
 
-    const fileUrl = `/uploads/${safeName}`;
+    const fileUrl = `${fileUrlPrefix}/${safeName}`;
 
-    // Update basis data jika ada archiveId
     if (archiveId) {
+      await ensureDbInitialized();
       const db = getDatabase();
-      db.prepare("UPDATE archives SET file_url = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?").run(
-        fileUrl,
-        parseInt(archiveId, 10)
-      );
+      await db.execute({
+        sql: "UPDATE archives SET file_url = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?",
+        args: [fileUrl, parseInt(archiveId, 10)],
+      });
 
-      db.prepare("INSERT INTO audit_logs (username, action, target_id, details) VALUES ('Operator', 'UPLOAD_PDF', ?, ?)")
-        .run(parseInt(archiveId, 10), `Mengunggah berkas PDF: ${file.name}`);
+      await db.execute({
+        sql: "INSERT INTO audit_logs (username, action, target_id, details) VALUES ('Operator', 'UPLOAD_PDF', ?, ?)",
+        args: [parseInt(archiveId, 10), `Mengunggah berkas PDF: ${file.name}`],
+      });
     }
 
     return NextResponse.json({ success: true, fileUrl });

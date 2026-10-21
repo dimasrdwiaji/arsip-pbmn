@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const { searchParams } = new URL(req.url);
 
@@ -51,7 +54,8 @@ export async function GET(req: NextRequest) {
 
     query += " ORDER BY tahun DESC, id ASC";
 
-    const rows = db.prepare(query).all(...params) as any[];
+    const res = await db.execute({ sql: query, args: params });
+    const rows = res.rows as any[];
 
     // Hitung JRA untuk setiap baris
     const results = rows.map((r) => {
@@ -79,43 +83,46 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const body = await req.json();
 
-    const stmt = db.prepare(`
+    const insertSql = `
       INSERT INTO archives (
         no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
         status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus
-      ) VALUES (
-        @no_berkas, @no_urut, @kode, @judul, @uraian, @tahun, @jumlah,
-        @status_fisik, @box, @skkaad, @lokasi, @rubrik, @jenis_arsip, @file_url, 'DALAM_RETENSI'
-      )
-    `);
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI')
+    `;
 
-    const info = stmt.run({
-      no_berkas: body.no_berkas || "1",
-      no_urut: body.no_urut || "1",
-      kode: body.kode || "-",
-      judul: body.judul || "-",
-      uraian: body.uraian || "-",
-      tahun: parseInt(body.tahun, 10) || new Date().getFullYear(),
-      jumlah: body.jumlah || "1 berkas",
-      status_fisik: body.status_fisik || "ASLI",
-      box: body.box || "BOX 1",
-      skkaad: body.skkaad || "Terbuka",
-      lokasi: body.lokasi || "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
-      rubrik: body.rubrik || "UMUM",
-      jenis_arsip: body.jenis_arsip || "INAKTIF",
-      file_url: body.file_url || null,
+    const res = await db.execute({
+      sql: insertSql,
+      args: [
+        body.no_berkas || "1",
+        body.no_urut || "1",
+        body.kode || "-",
+        body.judul || "-",
+        body.uraian || "-",
+        parseInt(body.tahun, 10) || new Date().getFullYear(),
+        body.jumlah || "1 berkas",
+        body.status_fisik || "ASLI",
+        body.box || "BOX 1",
+        body.skkaad || "Terbuka",
+        body.lokasi || "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
+        body.rubrik || "UMUM",
+        body.jenis_arsip || "INAKTIF",
+        body.file_url || null,
+      ],
     });
 
-    // Log audit
-    db.prepare(`
-      INSERT INTO audit_logs (username, action, target_id, details)
-      VALUES (?, 'CREATE', ?, ?)
-    `).run(body.operator || "Operator", Number(info.lastInsertRowid), `Menambahkan berkas: ${body.judul}`);
+    const newId = Number(res.lastInsertRowid || 0);
 
-    return NextResponse.json({ success: true, id: info.lastInsertRowid });
+    // Log audit
+    await db.execute({
+      sql: "INSERT INTO audit_logs (username, action, target_id, details) VALUES (?, 'CREATE', ?, ?)",
+      args: [body.operator || "Operator", newId, `Menambahkan berkas: ${body.judul}`],
+    });
+
+    return NextResponse.json({ success: true, id: newId });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }

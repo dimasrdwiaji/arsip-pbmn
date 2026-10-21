@@ -1,15 +1,19 @@
 import { NextResponse } from "next/server";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
 
-    const allArchives = db.prepare(`
+    const res = await db.execute(`
       SELECT id, no_berkas, kode, judul, uraian, tahun, box, skkaad, rubrik, file_url, status_siklus
       FROM archives
-    `).all() as any[];
+    `);
+    const allArchives = res.rows as any[];
 
     let siapMusnahCount = 0;
     let usulPermanenCount = 0;

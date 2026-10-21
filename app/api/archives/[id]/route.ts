@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const id = parseInt(params.id, 10);
-    const row = db.prepare("SELECT * FROM archives WHERE id = ?").get(id) as any;
+    const res = await db.execute({
+      sql: "SELECT * FROM archives WHERE id = ?",
+      args: [id],
+    });
+    const row = res.rows[0] as any;
 
     if (!row) {
       return NextResponse.json({ success: false, message: "Arsip tidak ditemukan" }, { status: 404 });
@@ -21,56 +28,60 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const id = parseInt(params.id, 10);
     const body = await req.json();
 
-    const stmt = db.prepare(`
+    const updateSql = `
       UPDATE archives SET
-        no_berkas = @no_berkas,
-        no_urut = @no_urut,
-        kode = @kode,
-        judul = @judul,
-        uraian = @uraian,
-        tahun = @tahun,
-        jumlah = @jumlah,
-        status_fisik = @status_fisik,
-        box = @box,
-        skkaad = @skkaad,
-        lokasi = @lokasi,
-        rubrik = @rubrik,
-        jenis_arsip = @jenis_arsip,
-        status_siklus = @status_siklus,
-        no_ba_musnah = @no_ba_musnah,
-        file_url = @file_url,
+        no_berkas = ?,
+        no_urut = ?,
+        kode = ?,
+        judul = ?,
+        uraian = ?,
+        tahun = ?,
+        jumlah = ?,
+        status_fisik = ?,
+        box = ?,
+        skkaad = ?,
+        lokasi = ?,
+        rubrik = ?,
+        jenis_arsip = ?,
+        status_siklus = ?,
+        no_ba_musnah = ?,
+        file_url = ?,
         updated_at = CURRENT_TIMESTAMP
-      WHERE id = @id
-    `);
+      WHERE id = ?
+    `;
 
-    stmt.run({
-      id,
-      no_berkas: body.no_berkas,
-      no_urut: body.no_urut,
-      kode: body.kode,
-      judul: body.judul,
-      uraian: body.uraian,
-      tahun: parseInt(body.tahun, 10),
-      jumlah: body.jumlah,
-      status_fisik: body.status_fisik,
-      box: body.box,
-      skkaad: body.skkaad,
-      lokasi: body.lokasi,
-      rubrik: body.rubrik,
-      jenis_arsip: body.jenis_arsip || "INAKTIF",
-      status_siklus: body.status_siklus || "DALAM_RETENSI",
-      no_ba_musnah: body.no_ba_musnah || null,
-      file_url: body.file_url || null,
+    await db.execute({
+      sql: updateSql,
+      args: [
+        body.no_berkas,
+        body.no_urut,
+        body.kode,
+        body.judul,
+        body.uraian,
+        parseInt(body.tahun, 10),
+        body.jumlah,
+        body.status_fisik,
+        body.box,
+        body.skkaad,
+        body.lokasi,
+        body.rubrik,
+        body.jenis_arsip || "INAKTIF",
+        body.status_siklus || "DALAM_RETENSI",
+        body.no_ba_musnah || null,
+        body.file_url || null,
+        id,
+      ],
     });
 
-    db.prepare(`
-      INSERT INTO audit_logs (username, action, target_id, details)
-      VALUES (?, 'UPDATE', ?, ?)
-    `).run(body.operator || "Operator", id, `Memperbarui berkas ID #${id}`);
+    await db.execute({
+      sql: "INSERT INTO audit_logs (username, action, target_id, details) VALUES (?, 'UPDATE', ?, ?)",
+      args: [body.operator || "Operator", id, `Memperbarui berkas ID #${id}`],
+    });
 
     return NextResponse.json({ success: true });
   } catch (err: any) {
@@ -80,16 +91,25 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
     const id = parseInt(params.id, 10);
 
-    const old = db.prepare("SELECT judul FROM archives WHERE id = ?").get(id) as any;
-    db.prepare("DELETE FROM archives WHERE id = ?").run(id);
+    const checkRes = await db.execute({
+      sql: "SELECT judul FROM archives WHERE id = ?",
+      args: [id],
+    });
+    const old = checkRes.rows[0] as any;
 
-    db.prepare(`
-      INSERT INTO audit_logs (username, action, target_id, details)
-      VALUES ('Operator', 'DELETE', ?, ?)
-    `).run(id, `Menghapus arsip: ${old?.judul || id}`);
+    await db.execute({
+      sql: "DELETE FROM archives WHERE id = ?",
+      args: [id],
+    });
+
+    await db.execute({
+      sql: "INSERT INTO audit_logs (username, action, target_id, details) VALUES ('Operator', 'DELETE', ?, ?)",
+      args: [id, `Menghapus arsip: ${old?.judul || id}`],
+    });
 
     return NextResponse.json({ success: true });
   } catch (err: any) {

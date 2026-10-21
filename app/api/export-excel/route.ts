@@ -1,17 +1,21 @@
 import { NextResponse } from "next/server";
 import * as XLSX from "xlsx";
-import { getDatabase } from "@/lib/db";
+import { getDatabase, ensureDbInitialized } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    await ensureDbInitialized();
     const db = getDatabase();
-    const rows = db.prepare(`
+    const res = await db.execute(`
       SELECT id, no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
              status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, status_siklus
       FROM archives
       ORDER BY tahun DESC, id ASC
-    `).all() as any[];
+    `);
+    const rows = res.rows as any[];
 
     const exportData = rows.map((r, idx) => {
       const jra = hitungJra(r.tahun, r.kode, r.rubrik, r.judul);
@@ -31,7 +35,7 @@ export async function GET() {
         "Rubrik / Kategori": r.rubrik,
         "Status JRA (Permen PUPR 26/2021)": jra.badgeLabel,
         "Nasib Akhir": jra.nasibAkhir,
-        "Tahun Habis Retensi": jra.tahunHabisRetensi,
+        "Masa Retensi (Tahun)": jra.tahunHabisRetensi,
       };
     });
 
