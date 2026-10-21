@@ -1,37 +1,44 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { 
   Search, 
-  Filter, 
-  FileText, 
-  Box, 
-  MapPin, 
-  Calendar, 
-  Tag as TagIcon, 
   Eye, 
   Download,
-  AlertTriangle,
-  Clock,
-  CheckCircle2,
-  FileCheck
+  Calendar, 
+  Building2,
+  FileText,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
+  X
 } from "lucide-react";
 import { Dialog } from "primereact/dialog";
-import { Tag } from "primereact/tag";
-import { Button } from "primereact/button";
 
 export default function PublicCatalogPage() {
   const [archives, setArchives] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // Search & Filter States
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRubrik, setSelectedRubrik] = useState("ALL");
-  const [selectedJra, setSelectedJra] = useState("ALL");
+  const [selectedTahun, setSelectedTahun] = useState("ALL");
+  const [selectedKode, setSelectedKode] = useState("ALL");
   const [selectedBox, setSelectedBox] = useState("ALL");
+  const [selectedJra, setSelectedJra] = useState("ALL");
+  const [selectedPencipta, setSelectedPencipta] = useState("ALL");
+  const [selectedStatus, setSelectedStatus] = useState("ALL"); // Pilihan 2 saja: AKTIF dan INAKTIF
+
+  // Sorting State
+  const [sortField, setSortField] = useState<string>("tahun");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
+
+  // Detail Modal State
   const [selectedArchive, setSelectedArchive] = useState<any | null>(null);
   const [dialogVisible, setDialogVisible] = useState(false);
 
-  // Filter options
-  const [rubrikOptions, setRubrikOptions] = useState<string[]>([]);
+  // Dynamic filter options
+  const [tahunOptions, setTahunOptions] = useState<number[]>([]);
+  const [kodeOptions, setKodeOptions] = useState<string[]>([]);
   const [boxOptions, setBoxOptions] = useState<string[]>([]);
 
   const fetchArchives = async () => {
@@ -39,20 +46,40 @@ export default function PublicCatalogPage() {
     try {
       const params = new URLSearchParams();
       if (searchQuery) params.set("q", searchQuery);
-      if (selectedRubrik !== "ALL") params.set("rubrik", selectedRubrik);
-      if (selectedJra !== "ALL") params.set("jra", selectedJra);
+      if (selectedTahun !== "ALL") params.set("tahun", selectedTahun);
+      if (selectedKode !== "ALL") params.set("kode", selectedKode);
       if (selectedBox !== "ALL") params.set("box", selectedBox);
+      if (selectedJra !== "ALL") params.set("jra", selectedJra);
+      if (selectedPencipta !== "ALL") params.set("kategori_pencipta", selectedPencipta);
+      if (selectedStatus !== "ALL") params.set("jenis_arsip", selectedStatus);
 
       const res = await fetch(`/api/archives?${params.toString()}`);
       const json = await res.json();
       if (json.success) {
         setArchives(json.data);
 
-        // Kumpulkan opsi filter unik
-        const rubriks = Array.from(new Set(json.data.map((d: any) => d.rubrik).filter(Boolean))) as string[];
-        const boxes = Array.from(new Set(json.data.map((d: any) => d.box).filter(Boolean))) as string[];
-        setRubrikOptions(rubriks);
-        setBoxOptions(boxes);
+        // Kumpulkan opsi filter dinamis dari data
+        if (tahunOptions.length === 0) {
+          const years = Array.from(new Set(json.data.map((d: any) => d.tahun).filter(Boolean))) as number[];
+          years.sort((a, b) => b - a);
+          setTahunOptions(years);
+        }
+
+        if (kodeOptions.length === 0) {
+          const kodes = Array.from(new Set(json.data.map((d: any) => d.kode).filter(Boolean))) as string[];
+          kodes.sort();
+          setKodeOptions(kodes);
+        }
+
+        if (boxOptions.length === 0) {
+          const boxes = Array.from(new Set(json.data.map((d: any) => d.box).filter(Boolean))) as string[];
+          boxes.sort((a, b) => {
+            const numA = parseInt(String(a).replace(/\D+/g, "") || "0", 10);
+            const numB = parseInt(String(b).replace(/\D+/g, "") || "0", 10);
+            return numA - numB;
+          });
+          setBoxOptions(boxes);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -66,182 +93,295 @@ export default function PublicCatalogPage() {
       fetchArchives();
     }, 250);
     return () => clearTimeout(timer);
-  }, [searchQuery, selectedRubrik, selectedJra, selectedBox]);
+  }, [searchQuery, selectedTahun, selectedKode, selectedBox, selectedJra, selectedPencipta, selectedStatus]);
+
+  const handleSort = (field: string) => {
+    if (sortField === field) {
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    } else {
+      setSortField(field);
+      setSortOrder("asc");
+    }
+  };
+
+  const sortedArchives = useMemo(() => {
+    return [...archives].sort((a, b) => {
+      let valA: any = a[sortField];
+      let valB: any = b[sortField];
+
+      if (sortField === "box") {
+        valA = parseInt(String(a.box || "").replace(/\D+/g, "") || "0", 10);
+        valB = parseInt(String(b.box || "").replace(/\D+/g, "") || "0", 10);
+      } else if (sortField === "masa_retensi") {
+        valA = a.jra?.tahunHabisRetensi || 0;
+        valB = b.jra?.tahunHabisRetensi || 0;
+      } else if (sortField === "status_jra") {
+        valA = a.jra?.statusJra || "";
+        valB = b.jra?.statusJra || "";
+      } else if (sortField === "no_berkas") {
+        valA = parseInt(String(a.no_berkas || "").replace(/\D+/g, "") || "0", 10);
+        valB = parseInt(String(b.no_berkas || "").replace(/\D+/g, "") || "0", 10);
+      } else if (typeof valA === "string") {
+        valA = (valA || "").toLowerCase();
+        valB = (valB || "").toLowerCase();
+      }
+
+      if (valA < valB) return sortOrder === "asc" ? -1 : 1;
+      if (valA > valB) return sortOrder === "asc" ? 1 : -1;
+      return 0;
+    });
+  }, [archives, sortField, sortOrder]);
+
+  const resetAllFilters = () => {
+    setSearchQuery("");
+    setSelectedTahun("ALL");
+    setSelectedKode("ALL");
+    setSelectedBox("ALL");
+    setSelectedJra("ALL");
+    setSelectedPencipta("ALL");
+    setSelectedStatus("ALL");
+  };
 
   const openDetail = (item: any) => {
     setSelectedArchive(item);
     setDialogVisible(true);
   };
 
+  const renderSortIndicator = (field: string) => {
+    if (sortField !== field) {
+      return <ArrowUpDown className="w-3 h-3 text-[#9CA3AF] opacity-40 inline-block ml-1" />;
+    }
+    return sortOrder === "asc" ? (
+      <ArrowUp className="w-3 h-3 text-[#2563EB] inline-block ml-1" />
+    ) : (
+      <ArrowDown className="w-3 h-3 text-[#2563EB] inline-block ml-1" />
+    );
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
 
-      {/* Hero Section Japandi Minimalis dengan Aksen Lembut PUPR */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E7E5DF] shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#EFF6FF] via-[#FEF3C7]/40 to-transparent rounded-full -mr-20 -mt-20 pointer-events-none" />
-
-        <div className="max-w-3xl relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FEF3C7] text-[#B45309] border border-[#FDE68A]">
-            <span>✨ Terbuka untuk Seluruh Pegawai & Pengguna</span>
+      {/* Header Banner Minimalis Japandi */}
+      <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E7E5DF] shadow-xs space-y-4">
+        <div>
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#2D323A]">
+              Katalog Arsip <span className="text-[#3B82F6]">Biro PBMN</span>
+            </h1>
+            <span className="px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-[#F5F4EE] text-[#4A505C] border border-[#E7E5DF]">
+              Permen PUPR No. 26/2021
+            </span>
           </div>
-
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#2D323A] leading-tight">
-            Pencarian & Katalog <span className="text-[#3B82F6]">Arsip BMN</span>
-          </h1>
-
-          <p className="text-sm text-[#6C727E] leading-relaxed">
-            Temu balik naskah arsip inaktif dan aktif Bagian PMH BMN. Dilengkapi evaluasi masa simpan otomatis sesuai{" "}
-            <strong className="text-[#2D323A] font-semibold">Permen PUPR No. 26 Tahun 2021 tentang Jadwal Retensi Arsip</strong>.
+          <p className="text-xs text-[#6C727E] mt-1">
+            Penelusuran arsip aktif dan inaktif Bagian PMH BMN dengan masa retensi terstandarisasi.
           </p>
+        </div>
 
-          {/* Search Bar Input Mobile-First */}
-          <div className="pt-2 flex flex-col sm:flex-row gap-2">
-            <div className="relative flex-1">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari nomor surat, proyek ('Suramadu'), 'Margajaya', 'PS 0501'..."
-                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-[#FAF9F5] border border-[#E7E5DF] text-sm text-[#2D323A] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/30 focus:border-[#F59E0B] transition"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#9CA3AF] hover:text-[#2D323A] p-1"
-                >
-                  ✕
-                </button>
-              )}
+        {/* 1. KOTAK PENCARIAN (SEARCH BOX) */}
+        <div className="relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Cari nomor berkas, uraian informasi, surat, sertifikat, atau nama pihak..."
+            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#FAF9F5] border border-[#E7E5DF] text-xs sm:text-sm text-[#2D323A] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20 focus:border-[#3B82F6] transition"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#9CA3AF] hover:text-[#2D323A] p-1"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+
+        {/* 2. SEMUA FILTER DALAM SATU BARIS (DI BAWAH SEARCH BOX) */}
+        <div className="pt-2 border-t border-[#F0EFEA] space-y-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            
+            {/* Filter 1: Tahun Pembuatan */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Tahun Pembuatan
+              </label>
+              <select
+                value={selectedTahun}
+                onChange={(e) => setSelectedTahun(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Tahun</option>
+                {tahunOptions.map((y) => (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                ))}
+              </select>
             </div>
 
-            <select
-              value={selectedRubrik}
-              onChange={(e) => setSelectedRubrik(e.target.value)}
-              className="py-3 px-3.5 rounded-2xl bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-semibold text-[#4A505C] focus:outline-none"
-            >
-              <option value="ALL">Semua Rubrik</option>
-              {rubrikOptions.map((r) => (
-                <option key={r} value={r}>
-                  {r}
-                </option>
-              ))}
-            </select>
+            {/* Filter 2: Kode Klasifikasi */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Kode Klasifikasi
+              </label>
+              <select
+                value={selectedKode}
+                onChange={(e) => setSelectedKode(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Kode</option>
+                {kodeOptions.map((k) => (
+                  <option key={k} value={k}>
+                    {k}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Filter 3: Boks (Seragam: Box 1, Box 2, dst) */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Nomor Boks
+              </label>
+              <select
+                value={selectedBox}
+                onChange={(e) => setSelectedBox(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Boks</option>
+                {boxOptions.map((b) => (
+                  <option key={b} value={b}>
+                    {b}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Filter 4: Jadwal Retensi */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Jadwal Retensi
+              </label>
+              <select
+                value={selectedJra}
+                onChange={(e) => setSelectedJra(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Retensi</option>
+                <option value="SIAP_MUSNAH">Siap Dimusnahkan</option>
+                <option value="USUL_PERMANEN">Usul Permanen</option>
+                <option value="DALAM_RETENSI">Dalam Simpan</option>
+              </select>
+            </div>
+
+            {/* Filter 5: Pencipta */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Pencipta Arsip
+              </label>
+              <select
+                value={selectedPencipta}
+                onChange={(e) => setSelectedPencipta(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Pencipta</option>
+                <option value="INTERNAL">Internal PUPR</option>
+                <option value="EKSTERNAL">Eksternal (Luar)</option>
+              </select>
+            </div>
+
+            {/* Filter 6: Status Siklus (Pilihan 2 saja: Aktif dan Inaktif) */}
+            <div>
+              <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">
+                Status Siklus
+              </label>
+              <select
+                value={selectedStatus}
+                onChange={(e) => setSelectedStatus(e.target.value)}
+                className="w-full py-1.5 px-2.5 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs font-medium text-[#2D323A] focus:outline-none focus:border-[#3B82F6]"
+              >
+                <option value="ALL">Semua Status</option>
+                <option value="AKTIF">Aktif</option>
+                <option value="INAKTIF">Inaktif</option>
+              </select>
+            </div>
+
+          </div>
+
+          {/* Baris Status & Tombol Reset */}
+          <div className="flex items-center justify-between text-xs pt-1.5 text-[#6C727E]">
+            <span>
+              Menampilkan <strong className="text-[#2D323A] font-bold">{sortedArchives.length}</strong> naskah berkas
+            </span>
+            {(searchQuery || selectedTahun !== "ALL" || selectedKode !== "ALL" || selectedBox !== "ALL" || selectedJra !== "ALL" || selectedPencipta !== "ALL" || selectedStatus !== "ALL") && (
+              <button
+                onClick={resetAllFilters}
+                className="text-[#2563EB] hover:underline font-semibold text-xs transition"
+              >
+                Reset Filter
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Status Filter Chips */}
-        <div className="mt-6 pt-4 border-t border-[#F0EFEA] flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[#6C727E] font-medium mr-1">Filter JRA:</span>
-            <button
-              onClick={() => setSelectedJra("ALL")}
-              className={`px-3 py-1 rounded-full font-medium transition ${
-                selectedJra === "ALL"
-                  ? "bg-[#2D323A] text-white"
-                  : "bg-[#FAF9F5] text-[#6C727E] border border-[#E7E5DF] hover:bg-white"
-              }`}
-            >
-              Semua
-            </button>
-            <button
-              onClick={() => setSelectedJra("SIAP_MUSNAH")}
-              className={`px-3 py-1 rounded-full font-semibold transition flex items-center gap-1 ${
-                selectedJra === "SIAP_MUSNAH"
-                  ? "bg-red-600 text-white"
-                  : "bg-red-50 text-red-700 border border-red-200 hover:bg-red-100"
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-              🔴 Siap Dimusnahkan
-            </button>
-            <button
-              onClick={() => setSelectedJra("USUL_PERMANEN")}
-              className={`px-3 py-1 rounded-full font-semibold transition flex items-center gap-1 ${
-                selectedJra === "USUL_PERMANEN"
-                  ? "bg-amber-600 text-white"
-                  : "bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100"
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-              🟡 Usul Permanen
-            </button>
-            <button
-              onClick={() => setSelectedJra("DALAM_RETENSI")}
-              className={`px-3 py-1 rounded-full font-semibold transition flex items-center gap-1 ${
-                selectedJra === "DALAM_RETENSI"
-                  ? "bg-emerald-600 text-white"
-                  : "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              🟢 Masa Simpan
-            </button>
-          </div>
-
-          <div className="text-xs text-[#6C727E] font-medium">
-            Ditemukan <strong className="text-[#2D323A] font-bold">{archives.length}</strong> naskah berkas
-          </div>
-        </div>
       </div>
 
-      {/* List / Table Area */}
+      {/* Tabel Data Arsip Minimalis */}
       {loading ? (
-        <div className="bg-white rounded-3xl p-12 border border-[#E7E5DF] text-center text-sm text-[#6C727E] shadow-sm">
-          <div className="animate-spin w-8 h-8 border-2 border-[#F59E0B] border-t-transparent rounded-full mx-auto mb-3" />
-          Memuat data arsip Biro PBMN...
+        <div className="bg-white rounded-2xl p-12 border border-[#E7E5DF] text-center text-xs text-[#6C727E]">
+          <div className="animate-spin w-6 h-6 border-2 border-[#3B82F6] border-t-transparent rounded-full mx-auto mb-2" />
+          Memuat data arsip...
         </div>
-      ) : archives.length === 0 ? (
-        <div className="bg-white rounded-3xl p-12 border border-[#E7E5DF] text-center text-sm text-[#6C727E] shadow-sm">
-          🔍 Tidak ada berkas arsip yang cocok dengan pencarian kata kunci atau filter yang dipilih.
+      ) : sortedArchives.length === 0 ? (
+        <div className="bg-white rounded-2xl p-12 border border-[#E7E5DF] text-center text-xs text-[#6C727E]">
+          Tidak ada berkas yang sesuai dengan kriteria pencarian dan filter Anda.
         </div>
       ) : (
         <>
-          {/* Mobile Card List View (Visible on Small Screens) */}
-          <div className="grid grid-cols-1 gap-3 md:hidden">
-            {archives.map((item) => (
+          {/* Mobile Card View */}
+          <div className="grid grid-cols-1 gap-2.5 md:hidden">
+            {sortedArchives.map((item) => (
               <div
                 key={item.id}
                 onClick={() => openDetail(item)}
-                className="bg-white rounded-2xl p-4 border border-[#E7E5DF] shadow-sm hover:border-[#F59E0B]/60 transition active:scale-[0.99] cursor-pointer space-y-2.5"
+                className="bg-white rounded-xl p-3.5 border border-[#E7E5DF] shadow-xs active:bg-[#FAF9F5] transition cursor-pointer space-y-2"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE]">
-                    {item.kode}
-                  </span>
-                  <div className="flex items-center gap-1">
-                    <span
-                      className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
-                        item.skkaad === "Terbuka"
-                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                          : "bg-amber-50 text-amber-700 border border-amber-200"
-                      }`}
-                    >
-                      {item.skkaad}
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-mono text-xs font-bold text-[#2563EB]">
+                      {item.kode}
                     </span>
-                    <span className="whitespace-nowrap px-2.5 py-0.5 rounded text-[11px] font-bold bg-[#F5F4EE] text-[#4A505C] border border-[#E7E5DF]">
+                    <span className="text-[11px] text-[#6C727E]">
+                      ({item.tahun})
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#F5F4EE] text-[#4A505C]">
                       {item.box}
                     </span>
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
+                      item.jenis_arsip === "AKTIF" ? "bg-emerald-50 text-emerald-700" : "bg-gray-100 text-gray-700"
+                    }`}>
+                      {item.jenis_arsip}
+                    </span>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-sm font-bold text-[#2D323A] line-clamp-2 leading-snug">
-                    {item.judul}
-                  </h3>
-                  <p className="text-xs text-[#6C727E] line-clamp-2 mt-1">
-                    {item.uraian}
-                  </p>
+                <div className="font-bold text-xs text-[#2D323A] line-clamp-2">
+                  {item.judul}
+                </div>
+                <div className="text-[11px] text-[#6C727E] line-clamp-2">
+                  {item.uraian}
                 </div>
 
-                <div className="pt-2 border-t border-[#F0EFEA] flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-1 text-[#6C727E]">
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>Tahun {item.tahun}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-xs">
-                    <span className="text-[#6C727E]">Masa Retensi:</span>
-                    <span className="font-mono font-bold text-[#2D323A] bg-[#FAF9F5] px-2 py-0.5 rounded border border-[#E7E5DF]">
+                <div className="pt-2 border-t border-[#F0EFEA] flex items-center justify-between text-[11px]">
+                  <span className="text-[#6C727E] truncate max-w-[180px]">
+                    {item.pencipta || "Internal PUPR"}
+                  </span>
+                  <div className="flex items-center gap-1 font-semibold text-[#2D323A]">
+                    <span>Masa Retensi:</span>
+                    <span className="font-mono bg-[#FAF9F5] px-1.5 py-0.5 rounded border border-[#E7E5DF]">
                       {item.jra?.tahunHabisRetensi}
                     </span>
                   </div>
@@ -250,59 +390,141 @@ export default function PublicCatalogPage() {
             ))}
           </div>
 
-          {/* Desktop Table View (Visible on Medium and Large Screens) */}
-          <div className="hidden md:block bg-white rounded-3xl border border-[#E7E5DF] shadow-sm overflow-hidden">
+          {/* Desktop Table View dengan Sortir Kolom & Kolom Tahun Terpisah */}
+          <div className="hidden md:block bg-white rounded-2xl border border-[#E7E5DF] shadow-xs overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="bg-[#F5F4EE] border-b border-[#E7E5DF] text-[#4A505C] font-semibold uppercase">
-                    <th className="p-3.5 w-16 text-center">Berkas</th>
-                    <th className="p-3.5 w-24">Kode</th>
-                    <th className="p-3.5 w-60">Indeks / Judul</th>
-                    <th className="p-3.5 min-w-[280px]">Uraian Masalah / Kegiatan</th>
-                    <th className="p-3.5 w-16 text-center">Tahun</th>
-                    <th className="p-3.5 min-w-[6rem] text-center whitespace-nowrap">Boks</th>
-                    <th className="p-3.5 min-w-[7rem] text-center whitespace-nowrap">Masa Retensi</th>
-                    <th className="p-3.5 w-24 text-center">Aksi</th>
+                  <tr className="bg-[#FAF9F5] border-b border-[#E7E5DF] text-[#4A505C] font-semibold text-[11px] uppercase tracking-wider">
+                    <th 
+                      onClick={() => handleSort("no_berkas")} 
+                      className="p-3 w-14 text-center cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      No {renderSortIndicator("no_berkas")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("box")} 
+                      className="p-3 w-24 cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Boks {renderSortIndicator("box")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("kode")} 
+                      className="p-3 w-28 cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Kode {renderSortIndicator("kode")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("tahun")} 
+                      className="p-3 w-20 text-center cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Tahun {renderSortIndicator("tahun")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("judul")} 
+                      className="p-3 min-w-[260px] cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Uraian Masalah / Judul Berkas {renderSortIndicator("judul")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("pencipta")} 
+                      className="p-3 w-36 cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Pencipta {renderSortIndicator("pencipta")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("jenis_arsip")} 
+                      className="p-3 w-20 text-center cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Status {renderSortIndicator("jenis_arsip")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("masa_retensi")} 
+                      className="p-3 w-28 text-center cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Masa Retensi {renderSortIndicator("masa_retensi")}
+                    </th>
+                    <th 
+                      onClick={() => handleSort("status_jra")} 
+                      className="p-3 w-32 text-center cursor-pointer select-none hover:text-[#2D323A]"
+                    >
+                      Ket. JRA {renderSortIndicator("status_jra")}
+                    </th>
+                    <th className="p-3 w-16 text-center">
+                      Aksi
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#F0EFEA]">
-                  {archives.map((item) => (
-                    <tr key={item.id} className="hover:bg-[#FAF9F5] transition">
-                      <td className="p-3.5 text-center font-bold text-[#9CA3AF]">
+                  {sortedArchives.map((item) => (
+                    <tr
+                      key={item.id}
+                      onClick={() => openDetail(item)}
+                      className="hover:bg-[#FAF9F5] transition cursor-pointer"
+                    >
+                      <td className="p-3 text-center text-[#9CA3AF] font-medium">
                         {item.no_berkas}
                       </td>
-                      <td className="p-3.5 font-mono font-bold text-[#2563EB]">
-                        {item.kode}
-                      </td>
-                      <td 
-                        onClick={() => openDetail(item)}
-                        className="p-3.5 font-bold text-[#2D323A] cursor-pointer hover:text-[#3B82F6] hover:underline"
-                      >
-                        {item.judul}
-                      </td>
-                      <td className="p-3.5 text-[#6C727E] line-clamp-2 max-w-md">
-                        {item.uraian}
-                      </td>
-                      <td className="p-3.5 text-center font-semibold text-[#2D323A]">
-                        {item.tahun}
-                      </td>
-                      <td className="p-3.5 text-center whitespace-nowrap">
-                        <span className="inline-block whitespace-nowrap px-2.5 py-1 rounded bg-[#F5F4EE] border border-[#E7E5DF] font-bold text-[#4A505C] text-xs">
+                      <td className="p-3 font-semibold text-[#2D323A] whitespace-nowrap">
+                        <span className="px-2 py-0.5 rounded bg-[#F5F4EE] border border-[#E7E5DF] text-[11px] font-mono">
                           {item.box}
                         </span>
                       </td>
-                      <td className="p-3.5 text-center whitespace-nowrap">
-                        <span className="font-mono font-bold text-xs text-[#2D323A] px-2.5 py-1 rounded bg-[#FAF9F5] border border-[#E7E5DF] inline-block">
-                          {item.jra?.tahunHabisRetensi}
+                      <td className="p-3 font-mono font-bold text-[#2563EB] whitespace-nowrap">
+                        {item.kode}
+                      </td>
+                      <td className="p-3 text-center font-semibold text-[#2D323A] whitespace-nowrap">
+                        {item.tahun}
+                      </td>
+                      <td className="p-3">
+                        <div className="font-bold text-[#2D323A] line-clamp-1">
+                          {item.judul}
+                        </div>
+                        <div className="text-[#6C727E] text-[11px] line-clamp-2 mt-0.5 leading-relaxed">
+                          {item.uraian}
+                        </div>
+                      </td>
+                      <td className="p-3 text-[11px]">
+                        <div className="font-medium text-[#2D323A] truncate max-w-[140px]">
+                          {item.pencipta || "Internal PUPR"}
+                        </div>
+                        <span className={`inline-block px-1.5 py-0.2 rounded text-[9px] font-semibold mt-0.5 ${
+                          item.kategori_pencipta === "EKSTERNAL" 
+                            ? "bg-amber-50 text-amber-800 border border-amber-200" 
+                            : "bg-blue-50 text-blue-700 border border-blue-200"
+                        }`}>
+                          {item.kategori_pencipta === "EKSTERNAL" ? "Eksternal" : "Internal"}
                         </span>
                       </td>
-                      <td className="p-3.5 text-center">
+                      <td className="p-3 text-center whitespace-nowrap">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                          item.jenis_arsip === "AKTIF"
+                            ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            : "bg-gray-100 text-gray-700 border border-gray-200"
+                        }`}>
+                          {item.jenis_arsip}
+                        </span>
+                      </td>
+                      <td className="p-3 text-center whitespace-nowrap font-mono font-bold text-[#2D323A]">
+                        {item.jra?.tahunHabisRetensi}
+                      </td>
+                      <td className="p-3 text-center whitespace-nowrap">
+                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
+                          item.jra?.statusJra === "SIAP_MUSNAH"
+                            ? "bg-red-50 text-red-700 border border-red-200"
+                            : item.jra?.statusJra === "USUL_PERMANEN"
+                            ? "bg-amber-50 text-amber-700 border border-amber-200"
+                            : "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                        }`}>
+                          {item.jra?.badgeLabel || "Dalam Simpan"}
+                        </span>
+                      </td>
+                      <td className="p-3 text-center whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
                         <button
                           onClick={() => openDetail(item)}
-                          className="px-2.5 py-1.5 rounded-xl bg-[#FAF9F5] hover:bg-white border border-[#E7E5DF] text-[#2D323A] font-semibold text-[11px] shadow-sm transition"
+                          className="px-2.5 py-1 rounded-lg bg-white hover:bg-[#FAF9F5] border border-[#E7E5DF] text-[#2D323A] font-semibold text-[11px] shadow-2xs transition"
                         >
-                          Detail ↗
+                          Lihat
                         </button>
                       </td>
                     </tr>
@@ -314,7 +536,7 @@ export default function PublicCatalogPage() {
         </>
       )}
 
-      {/* PrimeReact Dialog Detail Berkas */}
+      {/* Dialog Detail Berkas (On Click Row & Tombol Lihat) */}
       <Dialog
         header={
           <div className="flex items-center gap-2">
@@ -322,13 +544,13 @@ export default function PublicCatalogPage() {
               {selectedArchive?.kode}
             </span>
             <span className="text-sm font-bold text-[#2D323A]">
-              Detail Rekaman Arsip #{selectedArchive?.id}
+              Detail Berkas #{selectedArchive?.no_berkas} ({selectedArchive?.tahun})
             </span>
           </div>
         }
         visible={dialogVisible}
         onHide={() => setDialogVisible(false)}
-        className="w-[95vw] sm:w-[650px]"
+        className="w-[95vw] sm:w-[620px]"
         breakpoints={{ "960px": "75vw", "641px": "95vw" }}
       >
         {selectedArchive && (
@@ -341,97 +563,82 @@ export default function PublicCatalogPage() {
             </div>
 
             <div>
-              <span className="text-[11px] text-[#6C727E] font-medium block">Uraian Masalah / Perihal Surat:</span>
-              <div className="p-3 rounded-2xl bg-[#FAF9F5] border border-[#E7E5DF] text-[#2D323A] mt-1 leading-relaxed text-xs">
+              <span className="text-[11px] text-[#6C727E] font-medium block">Uraian Masalah / Perihal Naskah:</span>
+              <div className="p-3 rounded-xl bg-[#FAF9F5] border border-[#E7E5DF] text-[#2D323A] mt-1 leading-relaxed text-xs">
                 {selectedArchive.uraian}
               </div>
             </div>
 
             {/* Grid Informasi Kearsipan */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-              <div className="bg-[#FAF9F5] p-2.5 rounded-xl border border-[#E7E5DF]">
-                <span className="text-[10px] text-[#6C727E] block">Nomor Berkas / Urut</span>
-                <span className="font-bold text-[#2D323A] text-xs">
-                  {selectedArchive.no_berkas} / {selectedArchive.no_urut}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 p-3 rounded-xl bg-[#FAF9F5] border border-[#E7E5DF]">
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Nomor Boks</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.box}</span>
+              </div>
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Tahun Dokumen</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.tahun}</span>
+              </div>
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Status Siklus</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.jenis_arsip}</span>
+              </div>
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Kondisi Fisik</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.status_fisik}</span>
+              </div>
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Akses Keamanan</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.skkaad}</span>
+              </div>
+              <div>
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Masa Retensi</span>
+                <span className="font-bold text-[#2D323A]">{selectedArchive.jra?.tahunHabisRetensi}</span>
+              </div>
+              <div className="col-span-2 sm:col-span-3">
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Pencipta Arsip</span>
+                <span className="font-semibold text-[#2D323A]">
+                  {selectedArchive.pencipta || "Internal PUPR"} ({selectedArchive.kategori_pencipta || "INTERNAL"})
                 </span>
               </div>
-              <div className="bg-[#FAF9F5] p-2.5 rounded-xl border border-[#E7E5DF]">
-                <span className="text-[10px] text-[#6C727E] block">Tahun / Volume</span>
-                <span className="font-bold text-[#2D323A] text-xs">
-                  {selectedArchive.tahun} ({selectedArchive.jumlah})
-                </span>
-              </div>
-              <div className="bg-[#FAF9F5] p-2.5 rounded-xl border border-[#E7E5DF]">
-                <span className="text-[10px] text-[#6C727E] block">Kondisi Fisik</span>
-                <span className="font-bold text-[#2D323A] text-xs">
-                  {selectedArchive.status_fisik}
-                </span>
-              </div>
-              <div className="bg-[#FAF9F5] p-2.5 rounded-xl border border-[#E7E5DF]">
-                <span className="text-[10px] text-[#6C727E] block">Keamanan (SKKAAD)</span>
-                <span className={`font-bold text-xs ${selectedArchive.skkaad === "Terbuka" ? "text-emerald-700" : "text-amber-700"}`}>
-                  {selectedArchive.skkaad}
-                </span>
+              <div className="col-span-2 sm:col-span-3">
+                <span className="text-[10px] text-[#6C727E] block uppercase font-bold">Lokasi Simpan</span>
+                <span className="text-[#4A505C]">{selectedArchive.lokasi}</span>
               </div>
             </div>
 
-            {/* Evaluasi JRA Permen PUPR 26/2021 */}
-            <div className="p-3.5 rounded-2xl bg-[#FEF3C7]/40 border border-[#FDE68A] space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#92400E] flex items-center gap-1.5">
-                  <AlertTriangle className="w-3.5 h-3.5" />
-                  Jadwal Retensi Arsip (Permen PUPR No. 26/2021)
-                </span>
-                <Tag
-                  value={selectedArchive.jra?.badgeLabel}
-                  severity={selectedArchive.jra?.badgeSeverity}
-                  className="text-[10px] font-bold"
-                />
-              </div>
-              <p className="text-[11px] text-[#78350F] leading-relaxed">
-                {selectedArchive.jra?.catatanRetensi}. Masa aktif {selectedArchive.jra?.retensiAktifTahun} tahun & masa inaktif {selectedArchive.jra?.retensiInaktifTahun} tahun (Batas simpan: {selectedArchive.jra?.tahunHabisRetensi}).
+            {/* Rekomendasi JRA */}
+            <div className="p-3 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] space-y-1">
+              <span className="font-bold text-[#1E40AF] block text-xs">
+                Evaluasi JRA (Permen PUPR No. 26 Tahun 2021):
+              </span>
+              <p className="text-[11px] text-[#1E3A8A] leading-relaxed">
+                Dasar Hukum: {selectedArchive.jra?.dasarHukum}. {selectedArchive.jra?.catatanRetensi}. Rekomendasi Nasib Akhir: <strong>{selectedArchive.jra?.nasibAkhir}</strong>.
               </p>
             </div>
 
-            {/* Lokasi Simpan Fisik & File Digital */}
-            <div className="p-3.5 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-[10px] text-[#1D4ED8] font-bold block uppercase tracking-wide">
-                  📍 Lokasi Simpan Fisik
-                </span>
-                <div className="font-bold text-[#1E3A8A] text-xs mt-0.5">
-                  {selectedArchive.box} &bull; {selectedArchive.lokasi}
+            {/* Dokumen PDF Scan (Jika Ada) */}
+            {selectedArchive.file_url ? (
+              <div className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#E7E5DF]">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-[#2563EB]" />
+                  <span className="font-semibold text-[#2D323A]">Dokumen PDF Digital Tersedia</span>
                 </div>
-              </div>
-
-              {selectedArchive.file_url ? (
                 <a
                   href={selectedArchive.file_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-sm transition flex items-center gap-1.5 whitespace-nowrap"
+                  className="px-3 py-1.5 rounded-lg bg-[#2563EB] text-white font-semibold text-xs hover:bg-[#1D4ED8] transition flex items-center gap-1"
                 >
-                  <Eye className="w-3.5 h-3.5" />
-                  Buka Scan PDF
+                  <Download className="w-3.5 h-3.5" />
+                  Unduh Dokumen
                 </a>
-              ) : selectedArchive.skkaad === "Terbuka" ? (
-                <span className="text-[11px] text-[#6C727E] italic">
-                  Scan digital belum diunggah
-                </span>
-              ) : (
-                <span className="text-[11px] text-amber-800 font-medium">
-                  🔒 Dokumen Terbatas (Akses fisik)
-                </span>
-              )}
-            </div>
-
-            <div className="pt-2 flex justify-end">
-              <Button
-                label="Tutup"
-                onClick={() => setDialogVisible(false)}
-                className="p-button-secondary p-button-sm text-xs"
-              />
-            </div>
+              </div>
+            ) : (
+              <div className="text-[11px] text-[#9CA3AF] italic text-center py-1">
+                Belum ada berkas scan PDF digital yang diunggah untuk arsip ini.
+              </div>
+            )}
           </div>
         )}
       </Dialog>

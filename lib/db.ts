@@ -4,6 +4,16 @@ import fs from "fs";
 import os from "os";
 import seedArchives from "@/data/seed-archives.json";
 
+export function normalizeBox(val: any): string {
+  if (!val) return "Box 1";
+  const str = String(val).trim();
+  const match = str.match(/\d+/);
+  if (match) {
+    return `Box ${parseInt(match[0], 10)}`;
+  }
+  return "Box 1";
+}
+
 let dbInstance: Client | null = null;
 let isInitialized = false;
 
@@ -66,6 +76,8 @@ export async function ensureDbInitialized(): Promise<void> {
       file_url TEXT,
       status_siklus TEXT DEFAULT 'DALAM_RETENSI',
       no_ba_musnah TEXT,
+      pencipta TEXT DEFAULT 'Kementerian PUPR',
+      kategori_pencipta TEXT DEFAULT 'INTERNAL',
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
@@ -95,6 +107,14 @@ export async function ensureDbInitialized(): Promise<void> {
     CREATE INDEX IF NOT EXISTS idx_archives_skkaad ON archives(skkaad);
   `);
 
+  // Migrasi kolom jika belum ada
+  try {
+    await db.execute("ALTER TABLE archives ADD COLUMN pencipta TEXT DEFAULT 'Kementerian PUPR'");
+  } catch (e) {}
+  try {
+    await db.execute("ALTER TABLE archives ADD COLUMN kategori_pencipta TEXT DEFAULT 'INTERNAL'");
+  } catch (e) {}
+
   // Pastikan user admin dan petugas ada
   const userCount = await db.execute("SELECT COUNT(*) as count FROM users");
   if (Number(userCount.rows[0]?.count || 0) === 0) {
@@ -116,8 +136,9 @@ export async function ensureDbInitialized(): Promise<void> {
     const batchStatements = seedArchives.map((item: any) => ({
       sql: `INSERT INTO archives (
         id, no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
-        status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus,
+        pencipta, kategori_pencipta
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       args: [
         item.id,
         item.no_berkas || "1",
@@ -128,13 +149,15 @@ export async function ensureDbInitialized(): Promise<void> {
         item.tahun || 2020,
         item.jumlah || "1 berkas",
         item.status_fisik || "ASLI",
-        item.box || "BOX 1",
+        normalizeBox(item.box),
         item.skkaad || "Terbuka",
         item.lokasi || "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
         item.rubrik || "UMUM",
         item.jenis_arsip || "INAKTIF",
         item.file_url || null,
         item.status_siklus || "DALAM_RETENSI",
+        item.pencipta || "Kementerian PUPR",
+        item.kategori_pencipta || "INTERNAL",
       ],
     }));
 

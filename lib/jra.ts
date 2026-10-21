@@ -4,6 +4,16 @@
  * Nomor 26 Tahun 2021 tentang Jadwal Retensi Arsip
  */
 
+export function normalizeBox(val: any): string {
+  if (!val) return "Box 1";
+  const str = String(val).trim();
+  const match = str.match(/\d+/);
+  if (match) {
+    return `Box ${parseInt(match[0], 10)}`;
+  }
+  return "Box 1";
+}
+
 export interface JraEvaluation {
   retensiAktifTahun: number;
   retensiInaktifTahun: number;

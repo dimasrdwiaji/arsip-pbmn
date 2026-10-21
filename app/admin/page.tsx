@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { 
   Plus, 
@@ -11,19 +11,32 @@ import {
   RefreshCw, 
   Search, 
   FileText, 
-  Check, 
   Eye,
-  AlertCircle,
   LogIn,
-  X
+  X,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown
 } from "lucide-react";
 import { Dialog } from "primereact/dialog";
+import { normalizeBox } from "@/lib/jra";
 
 export default function AdminArchivePage() {
   const [archives, setArchives] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
   const [user, setUser] = useState<any | null>(null);
+
+  // Search & Filter
+  const [search, setSearch] = useState("");
+  const [selectedTahun, setSelectedTahun] = useState("ALL");
+  const [selectedKode, setSelectedKode] = useState("ALL");
+  const [selectedBox, setSelectedBox] = useState("ALL");
+  const [selectedPencipta, setSelectedPencipta] = useState("ALL");
+  const [selectedStatus, setSelectedStatus] = useState("ALL");
+
+  // Sorting
+  const [sortField, setSortField] = useState<string>("tahun");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
 
   // Form State
   const [dialogVisible, setDialogVisible] = useState(false);
@@ -40,22 +53,28 @@ export default function AdminArchivePage() {
     tahun: 2024,
     jumlah: "1 berkas",
     status_fisik: "ASLI",
-    box: "BOX 1",
+    box: "Box 1",
     skkaad: "Terbuka",
     lokasi: "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
     rubrik: "UMUM",
     jenis_arsip: "INAKTIF",
+    pencipta: "Kementerian PUPR",
+    kategori_pencipta: "INTERNAL",
     file_url: null,
   });
 
-  // Dedicated Upload State for row-level upload button
+  // Dedicated Upload State
   const [uploadDialogVisible, setUploadDialogVisible] = useState(false);
   const [uploadTargetId, setUploadTargetId] = useState<number | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
 
+  // Options
+  const [tahunOptions, setTahunOptions] = useState<number[]>([]);
+  const [kodeOptions, setKodeOptions] = useState<string[]>([]);
+  const [boxOptions, setBoxOptions] = useState<string[]>([]);
+
   useEffect(() => {
-    // Default state: pengguna publik
     const saved = localStorage.getItem("arsip_user");
     if (saved) {
       try {
@@ -76,6 +95,28 @@ export default function AdminArchivePage() {
       const json = await res.json();
       if (json.success) {
         setArchives(json.data);
+
+        if (tahunOptions.length === 0) {
+          const years = Array.from(new Set(json.data.map((d: any) => d.tahun).filter(Boolean))) as number[];
+          years.sort((a, b) => b - a);
+          setTahunOptions(years);
+        }
+
+        if (kodeOptions.length === 0) {
+          const kodes = Array.from(new Set(json.data.map((d: any) => d.kode).filter(Boolean))) as string[];
+          kodes.sort();
+          setKodeOptions(kodes);
+        }
+
+        if (boxOptions.length === 0) {
+          const boxes = Array.from(new Set(json.data.map((d: any) => d.box).filter(Boolean))) as string[];
+          boxes.sort((a, b) => {
+            const numA = parseInt(String(a).replace(/\D+/g, "") || "0", 10);
+            const numB = parseInt(String(b).replace(/\D+/g, "") || "0", 10);
+            return numA - numB;
+          });
+          setBoxOptions(boxes);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -84,10 +125,52 @@ export default function AdminArchivePage() {
     }
   };
 
-  const handleSearchChange = (val: string) => {
-    setSearch(val);
-    fetchArchives(val);
+  const handleSort = (field: string) => {
+    if (sortField === field) {
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    } else {
+      setSortField(field);
+      setSortOrder("asc");
+    }
   };
+
+  const filteredAndSortedArchives = useMemo(() => {
+    return archives
+      .filter((item) => {
+        if (selectedTahun !== "ALL" && String(item.tahun) !== selectedTahun) return false;
+        if (selectedKode !== "ALL" && !item.kode.replace(/\s+/g, "").includes(selectedKode.replace(/\s+/g, ""))) return false;
+        if (selectedBox !== "ALL" && item.box !== selectedBox) return false;
+        if (selectedPencipta !== "ALL" && item.kategori_pencipta !== selectedPencipta) return false;
+        if (selectedStatus !== "ALL" && item.jenis_arsip !== selectedStatus) return false;
+        if (search) {
+          const hay = `${item.no_berkas} ${item.judul} ${item.uraian} ${item.kode} ${item.box} ${item.pencipta}`.toLowerCase();
+          if (!hay.includes(search.toLowerCase())) return false;
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        let valA: any = a[sortField];
+        let valB: any = b[sortField];
+
+        if (sortField === "box") {
+          valA = parseInt(String(a.box || "").replace(/\D+/g, "") || "0", 10);
+          valB = parseInt(String(b.box || "").replace(/\D+/g, "") || "0", 10);
+        } else if (sortField === "masa_retensi") {
+          valA = a.jra?.tahunHabisRetensi || 0;
+          valB = b.jra?.tahunHabisRetensi || 0;
+        } else if (sortField === "no_berkas") {
+          valA = parseInt(String(a.no_berkas || "").replace(/\D+/g, "") || "0", 10);
+          valB = parseInt(String(b.no_berkas || "").replace(/\D+/g, "") || "0", 10);
+        } else if (typeof valA === "string") {
+          valA = (valA || "").toLowerCase();
+          valB = (valB || "").toLowerCase();
+        }
+
+        if (valA < valB) return sortOrder === "asc" ? -1 : 1;
+        if (valA > valB) return sortOrder === "asc" ? 1 : -1;
+        return 0;
+      });
+  }, [archives, search, selectedTahun, selectedKode, selectedBox, selectedPencipta, selectedStatus, sortField, sortOrder]);
 
   const openNew = () => {
     setIsEditing(false);
@@ -101,11 +184,13 @@ export default function AdminArchivePage() {
       tahun: 2024,
       jumlah: "1 berkas",
       status_fisik: "ASLI",
-      box: "BOX 1",
+      box: "Box 1",
       skkaad: "Terbuka",
       lokasi: "Lt.4 Gedung Menteri PU, Bagian PMH BMN",
       rubrik: "UMUM",
       jenis_arsip: "INAKTIF",
+      pencipta: "Kementerian PUPR",
+      kategori_pencipta: "INTERNAL",
       file_url: null,
     });
     setDialogVisible(true);
@@ -114,7 +199,12 @@ export default function AdminArchivePage() {
   const openEdit = (item: any) => {
     setIsEditing(true);
     setFormPdfFile(null);
-    setCurrentArchive({ ...item });
+    setCurrentArchive({
+      ...item,
+      box: normalizeBox(item.box),
+      pencipta: item.pencipta || "Kementerian PUPR",
+      kategori_pencipta: item.kategori_pencipta || "INTERNAL",
+    });
     setDialogVisible(true);
   };
 
@@ -131,7 +221,6 @@ export default function AdminArchivePage() {
     try {
       let finalFileUrl = currentArchive.file_url;
 
-      // Jika ada file PDF baru yang dipilih di form
       if (formPdfFile) {
         const formData = new FormData();
         formData.append("file", formPdfFile);
@@ -151,6 +240,7 @@ export default function AdminArchivePage() {
 
       const payload = {
         ...currentArchive,
+        box: normalizeBox(currentArchive.box),
         file_url: finalFileUrl,
         operator: user?.username || "Petugas",
       };
@@ -170,90 +260,91 @@ export default function AdminArchivePage() {
       }
 
       setDialogVisible(false);
-      setFormPdfFile(null);
       fetchArchives(search);
     } catch (err) {
-      alert("Gagal menyimpan data berkas");
+      console.error(err);
+      alert("Terjadi kesalahan saat menyimpan data");
     } finally {
       setSaving(false);
     }
   };
 
   const deleteArchive = async (id: number) => {
-    if (confirm("Apakah Anda yakin ingin menghapus data berkas ini dari database?")) {
-      try {
-        await fetch(`/api/archives/${id}`, { method: "DELETE" });
-        fetchArchives(search);
-      } catch (err) {
-        alert("Gagal menghapus data");
-      }
-    }
-  };
-
-  const handleSyncExcel = async () => {
-    if (confirm("Sinkronkan ulang data dari spreadsheet DAFTAR ARSIP INAKTIF_PMH BMN.xlsx?")) {
-      setLoading(true);
-      try {
-        const res = await fetch("/api/sync-excel", { method: "POST" });
-        const json = await res.json();
-        alert(json.message);
-        fetchArchives();
-      } catch (err) {
-        alert("Gagal menyinkronkan data.");
-      } finally {
-        setLoading(false);
-      }
+    if (!confirm("Apakah Anda yakin ingin menghapus arsip ini? Data yang dihapus tidak dapat dipulihkan.")) return;
+    try {
+      await fetch(`/api/archives/${id}`, { method: "DELETE" });
+      fetchArchives(search);
+    } catch (err) {
+      console.error(err);
     }
   };
 
   const handleUploadPdf = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFile || !uploadTargetId) return;
-
     setUploading(true);
+
     try {
       const formData = new FormData();
       formData.append("file", selectedFile);
-      formData.append("archiveId", uploadTargetId.toString());
 
-      const res = await fetch("/api/upload", {
+      const uploadRes = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
-      const json = await res.json();
-      if (json.success) {
-        alert("File scan PDF berhasil diunggah!");
+      const uploadJson = await uploadRes.json();
+
+      if (uploadJson.success) {
+        await fetch(`/api/archives/${uploadTargetId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            file_url: uploadJson.fileUrl,
+            operator: user?.username || "Petugas",
+          }),
+        });
+
         setUploadDialogVisible(false);
         setSelectedFile(null);
         fetchArchives(search);
       } else {
-        alert(json.message || "Gagal mengunggah file");
+        alert("Gagal mengunggah PDF: " + (uploadJson.message || ""));
       }
     } catch (err) {
-      alert("Terjadi kesalahan saat upload");
+      console.error(err);
+      alert("Terjadi kesalahan saat mengunggah PDF");
     } finally {
       setUploading(false);
     }
   };
 
-  // Proteksi Tampilan Pengguna Publik (Jika belum login)
+  const renderSortIndicator = (field: string) => {
+    if (sortField !== field) {
+      return <ArrowUpDown className="w-3 h-3 text-[#9CA3AF] opacity-40 inline-block ml-1" />;
+    }
+    return sortOrder === "asc" ? (
+      <ArrowUp className="w-3 h-3 text-[#2563EB] inline-block ml-1" />
+    ) : (
+      <ArrowDown className="w-3 h-3 text-[#2563EB] inline-block ml-1" />
+    );
+  };
+
   if (!user) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl p-8 border border-[#E7E5DF] shadow-sm max-w-md w-full text-center space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto text-xl">
-            🔒
+        <div className="bg-white rounded-2xl p-8 border border-[#E7E5DF] shadow-xs max-w-md w-full text-center space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center mx-auto">
+            <LogIn className="w-6 h-6" />
           </div>
-          <h2 className="text-lg font-bold text-[#2D323A]">Akses Panel Khusus Petugas</h2>
+          <h2 className="text-lg font-bold text-[#2D323A]">Akses Khusus Petugas Arsip</h2>
           <p className="text-xs text-[#6C727E] leading-relaxed">
-            Halaman Panel Petugas memerlukan autentikasi. Silakan masuk dengan akun petugas atau administrator Anda untuk melakukan entri dan modifikasi arsip.
+            Halaman Panel Petugas memerlukan autentikasi operator atau administrator untuk melakukan penambahan, perubahan, dan penataan berkas fisik.
           </p>
           <div className="pt-2">
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-sm transition"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-xs transition"
             >
-              <LogIn className="w-4 h-4 text-[#F59E0B]" />
               Masuk / Login Petugas
             </Link>
           </div>
@@ -263,47 +354,31 @@ export default function AdminArchivePage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
 
-      {/* Top Banner Status Operator */}
-      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#E7E5DF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      {/* Header Panel */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl sm:text-2xl font-extrabold text-[#2D323A] tracking-tight">
-              Panel Pengelola <span className="text-[#3B82F6]">Arsip BMN</span>
-            </h1>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FEF3C7] text-[#D97706] border border-[#FDE68A]">
-              CRUD & Upload
-            </span>
-          </div>
-          <p className="text-xs text-[#6C727E] mt-1">
-            Masuk sebagai: <strong className="text-[#2D323A]">{user.nama_lengkap} ({user.role})</strong>
+          <h1 className="text-xl sm:text-2xl font-extrabold text-[#2D323A] tracking-tight">
+            Panel Petugas <span className="text-[#3B82F6]">Arsip BMN</span>
+          </h1>
+          <p className="text-xs text-[#6C727E] mt-0.5">
+            Pengelolaan naskah arsip, penataan boks fisik, dan pelampiran dokumen scan PDF.
           </p>
         </div>
 
-        {/* Action Buttons Header */}
         <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
           <button
             onClick={openNew}
-            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-sm transition active:scale-95"
+            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-xs transition"
           >
             <Plus className="w-4 h-4" />
             Entri Berkas Baru
           </button>
 
-          <button
-            onClick={handleSyncExcel}
-            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#FAF9F5] hover:bg-white text-[#2D323A] border border-[#E7E5DF] text-xs font-semibold shadow-sm transition"
-            title="Import ulang dari spreadsheet Excel"
-          >
-            <RefreshCw className="w-3.5 h-3.5 text-[#F59E0B]" />
-            Sinkron Excel
-          </button>
-
           <a
             href="/api/export-excel"
-            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#FAF9F5] hover:bg-white text-[#2D323A] border border-[#E7E5DF] text-xs font-semibold shadow-sm transition"
-            title="Unduh database ke format XLSX"
+            className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white hover:bg-[#FAF9F5] text-[#2D323A] border border-[#E7E5DF] text-xs font-semibold shadow-xs transition"
           >
             <Download className="w-3.5 h-3.5 text-emerald-600" />
             Export XLSX
@@ -311,72 +386,184 @@ export default function AdminArchivePage() {
         </div>
       </div>
 
-      {/* Search Input Bar */}
-      <div className="bg-white rounded-2xl p-3 border border-[#E7E5DF] shadow-sm flex items-center gap-2">
-        <Search className="w-4 h-4 text-[#9CA3AF] ml-2" />
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => handleSearchChange(e.target.value)}
-          placeholder="Cari naskah untuk diedit/dimutasi boks..."
-          className="flex-1 bg-transparent text-xs text-[#2D323A] placeholder-[#9CA3AF] focus:outline-none"
-        />
-        {search && (
-          <button onClick={() => handleSearchChange("")} className="text-xs text-[#9CA3AF] p-1">
-            ✕
-          </button>
-        )}
+      {/* Search & 1 Baris Filter Lengkap */}
+      <div className="bg-white rounded-2xl p-4 border border-[#E7E5DF] shadow-xs space-y-3">
+        <div className="relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Cari nomor berkas, judul naskah, pencipta, atau kode klasifikasi..."
+            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A] placeholder-[#9CA3AF] focus:outline-none focus:border-[#3B82F6]"
+          />
+          {search && (
+            <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#9CA3AF] p-1">
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+
+        {/* 1 Baris Filter di Bawah Search Box */}
+        <div className="pt-2 border-t border-[#F0EFEA] grid grid-cols-2 sm:grid-cols-5 gap-2">
+          <div>
+            <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">Tahun</label>
+            <select
+              value={selectedTahun}
+              onChange={(e) => setSelectedTahun(e.target.value)}
+              className="w-full py-1.5 px-2 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A]"
+            >
+              <option value="ALL">Semua Tahun</option>
+              {tahunOptions.map((y) => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">Kode</label>
+            <select
+              value={selectedKode}
+              onChange={(e) => setSelectedKode(e.target.value)}
+              className="w-full py-1.5 px-2 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A]"
+            >
+              <option value="ALL">Semua Kode</option>
+              {kodeOptions.map((k) => (
+                <option key={k} value={k}>{k}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">Boks</label>
+            <select
+              value={selectedBox}
+              onChange={(e) => setSelectedBox(e.target.value)}
+              className="w-full py-1.5 px-2 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A]"
+            >
+              <option value="ALL">Semua Boks</option>
+              {boxOptions.map((b) => (
+                <option key={b} value={b}>{b}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">Pencipta</label>
+            <select
+              value={selectedPencipta}
+              onChange={(e) => setSelectedPencipta(e.target.value)}
+              className="w-full py-1.5 px-2 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A]"
+            >
+              <option value="ALL">Semua Pencipta</option>
+              <option value="INTERNAL">Internal PUPR</option>
+              <option value="EKSTERNAL">Eksternal (Luar)</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="text-[10px] font-bold text-[#6C727E] uppercase block mb-1">Status</label>
+            <select
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className="w-full py-1.5 px-2 rounded-lg bg-[#FAF9F5] border border-[#E7E5DF] text-xs text-[#2D323A]"
+            >
+              <option value="ALL">Semua Status</option>
+              <option value="AKTIF">Aktif</option>
+              <option value="INAKTIF">Inaktif</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      {/* Main Admin Table */}
+      {/* Main Admin Table dengan Sortir Kolom */}
       {loading ? (
-        <div className="bg-white rounded-3xl p-12 border border-[#E7E5DF] text-center text-sm text-[#6C727E]">
-          <div className="animate-spin w-8 h-8 border-2 border-[#F59E0B] border-t-transparent rounded-full mx-auto mb-3" />
-          Memuat tabel manajemen berkas...
+        <div className="bg-white rounded-2xl p-12 border border-[#E7E5DF] text-center text-xs text-[#6C727E]">
+          <div className="animate-spin w-6 h-6 border-2 border-[#3B82F6] border-t-transparent rounded-full mx-auto mb-2" />
+          Memuat data arsip...
         </div>
       ) : (
-        <div className="bg-white rounded-3xl border border-[#E7E5DF] shadow-sm overflow-hidden">
+        <div className="bg-white rounded-2xl border border-[#E7E5DF] shadow-xs overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-[#FAF9F5] border-b border-[#E7E5DF] text-[#4A505C] font-semibold uppercase">
-                  <th className="p-3 w-16 text-center">No Berkas</th>
-                  <th className="p-3 w-24">Kode</th>
-                  <th className="p-3 w-60">Indeks / Judul</th>
-                  <th className="p-3 min-w-[6rem] text-center whitespace-nowrap">Boks</th>
-                  <th className="p-3 w-20 text-center">Tahun</th>
-                  <th className="p-3 min-w-[7rem] text-center whitespace-nowrap">Masa Retensi</th>
-                  <th className="p-3 w-24 text-center">File Digital</th>
-                  <th className="p-3 w-36 text-center">Aksi Petugas</th>
+                <tr className="bg-[#FAF9F5] border-b border-[#E7E5DF] text-[#4A505C] font-semibold text-[11px] uppercase tracking-wider">
+                  <th onClick={() => handleSort("no_berkas")} className="p-3 w-14 text-center cursor-pointer select-none hover:text-[#2D323A]">
+                    No {renderSortIndicator("no_berkas")}
+                  </th>
+                  <th onClick={() => handleSort("box")} className="p-3 w-24 cursor-pointer select-none hover:text-[#2D323A]">
+                    Boks {renderSortIndicator("box")}
+                  </th>
+                  <th onClick={() => handleSort("kode")} className="p-3 w-28 cursor-pointer select-none hover:text-[#2D323A]">
+                    Kode {renderSortIndicator("kode")}
+                  </th>
+                  <th onClick={() => handleSort("tahun")} className="p-3 w-20 text-center cursor-pointer select-none hover:text-[#2D323A]">
+                    Tahun {renderSortIndicator("tahun")}
+                  </th>
+                  <th onClick={() => handleSort("judul")} className="p-3 min-w-[260px] cursor-pointer select-none hover:text-[#2D323A]">
+                    Uraian Masalah / Judul {renderSortIndicator("judul")}
+                  </th>
+                  <th onClick={() => handleSort("pencipta")} className="p-3 w-36 cursor-pointer select-none hover:text-[#2D323A]">
+                    Pencipta {renderSortIndicator("pencipta")}
+                  </th>
+                  <th onClick={() => handleSort("jenis_arsip")} className="p-3 w-20 text-center cursor-pointer select-none hover:text-[#2D323A]">
+                    Status {renderSortIndicator("jenis_arsip")}
+                  </th>
+                  <th onClick={() => handleSort("masa_retensi")} className="p-3 w-28 text-center cursor-pointer select-none hover:text-[#2D323A]">
+                    Masa Retensi {renderSortIndicator("masa_retensi")}
+                  </th>
+                  <th className="p-3 w-20 text-center">PDF</th>
+                  <th className="p-3 w-24 text-center">Aksi</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#F0EFEA]">
-                {archives.map((item) => (
-                  <tr key={item.id} className="hover:bg-[#FAF9F5] transition">
-                    <td className="p-3 text-center font-bold text-[#9CA3AF]">
+                {filteredAndSortedArchives.map((item) => (
+                  <tr 
+                    key={item.id} 
+                    onClick={() => openEdit(item)}
+                    className="hover:bg-[#FAF9F5] transition cursor-pointer"
+                  >
+                    <td className="p-3 text-center text-[#9CA3AF] font-medium">
                       {item.no_berkas}
                     </td>
-                    <td className="p-3 font-mono font-bold text-[#2563EB]">
-                      {item.kode}
-                    </td>
-                    <td className="p-3 font-bold text-[#2D323A]">
-                      <div className="line-clamp-1">{item.judul}</div>
-                      <div className="text-[11px] text-[#6C727E] font-normal line-clamp-1">{item.uraian}</div>
-                    </td>
-                    <td className="p-3 text-center whitespace-nowrap">
-                      <span className="inline-block whitespace-nowrap px-2.5 py-1 rounded bg-[#FAF9F5] border border-[#E7E5DF] font-bold text-[#4A505C] text-xs">
+                    <td className="p-3 font-semibold text-[#2D323A] whitespace-nowrap">
+                      <span className="px-2 py-0.5 rounded bg-[#F5F4EE] border border-[#E7E5DF] text-[11px] font-mono">
                         {item.box}
                       </span>
                     </td>
-                    <td className="p-3 text-center font-medium">
+                    <td className="p-3 font-mono font-bold text-[#2563EB] whitespace-nowrap">
+                      {item.kode}
+                    </td>
+                    <td className="p-3 text-center font-semibold text-[#2D323A] whitespace-nowrap">
                       {item.tahun}
                     </td>
-                    <td className="p-3 text-center whitespace-nowrap">
-                      <span className="font-mono font-bold text-xs text-[#2D323A] px-2.5 py-1 rounded bg-[#FAF9F5] border border-[#E7E5DF] inline-block">
-                        {item.jra?.tahunHabisRetensi}
+                    <td className="p-3">
+                      <div className="font-bold text-[#2D323A] line-clamp-1">{item.judul}</div>
+                      <div className="text-[11px] text-[#6C727E] font-normal line-clamp-1">{item.uraian}</div>
+                    </td>
+                    <td className="p-3 text-[11px]">
+                      <div className="font-medium text-[#2D323A] truncate max-w-[130px]">{item.pencipta || "Internal PUPR"}</div>
+                      <span className={`inline-block px-1.5 py-0.2 rounded text-[9px] font-semibold mt-0.5 ${
+                        item.kategori_pencipta === "EKSTERNAL" 
+                          ? "bg-amber-50 text-amber-800 border border-amber-200" 
+                          : "bg-blue-50 text-blue-700 border border-blue-200"
+                      }`}>
+                        {item.kategori_pencipta === "EKSTERNAL" ? "Eksternal" : "Internal"}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center whitespace-nowrap">
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                        item.jenis_arsip === "AKTIF"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-gray-100 text-gray-700 border border-gray-200"
+                      }`}>
+                        {item.jenis_arsip}
+                      </span>
+                    </td>
+                    <td className="p-3 text-center whitespace-nowrap font-mono font-bold text-[#2D323A]">
+                      {item.jra?.tahunHabisRetensi}
+                    </td>
+                    <td className="p-3 text-center" onClick={(e) => e.stopPropagation()}>
                       {item.file_url ? (
                         <a
                           href={item.file_url}
@@ -384,18 +571,18 @@ export default function AdminArchivePage() {
                           rel="noreferrer"
                           className="inline-flex items-center gap-1 text-[11px] text-[#2563EB] font-bold hover:underline"
                         >
-                          <FileText className="w-3 h-3" /> Ada PDF
+                          <FileText className="w-3.5 h-3.5" /> PDF
                         </a>
                       ) : (
-                        <span className="text-[10px] text-[#9CA3AF] italic">Belum Ada</span>
+                        <span className="text-[10px] text-[#9CA3AF] italic">-</span>
                       )}
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
                       <div className="flex items-center justify-center gap-1">
                         <button
                           onClick={() => openEdit(item)}
                           className="p-1.5 rounded-lg bg-[#EFF6FF] text-[#1D4ED8] hover:bg-[#DBEAFE] transition"
-                          title="Edit Berkas & Lampiran PDF"
+                          title="Edit Berkas"
                         >
                           <Edit className="w-3.5 h-3.5" />
                         </button>
@@ -426,7 +613,7 @@ export default function AdminArchivePage() {
         </div>
       )}
 
-      {/* Dialog Form Tambah / Edit Berkas (Termasuk Opsi Upload & Hapus PDF) */}
+      {/* Dialog Form Tambah / Edit Berkas */}
       <Dialog
         header={
           <span className="text-sm font-bold text-[#2D323A]">
@@ -446,7 +633,7 @@ export default function AdminArchivePage() {
                 required
                 value={currentArchive.no_berkas}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, no_berkas: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               />
             </div>
             <div>
@@ -456,7 +643,7 @@ export default function AdminArchivePage() {
                 required
                 value={currentArchive.no_urut}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, no_urut: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               />
             </div>
             <div>
@@ -466,7 +653,7 @@ export default function AdminArchivePage() {
                 required
                 value={currentArchive.kode}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, kode: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs font-mono focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs font-mono focus:outline-none"
               />
             </div>
           </div>
@@ -478,7 +665,7 @@ export default function AdminArchivePage() {
               required
               value={currentArchive.judul}
               onChange={(e) => setCurrentArchive({ ...currentArchive, judul: e.target.value })}
-              className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
             />
           </div>
 
@@ -489,7 +676,7 @@ export default function AdminArchivePage() {
               required
               value={currentArchive.uraian}
               onChange={(e) => setCurrentArchive({ ...currentArchive, uraian: e.target.value })}
-              className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
             />
           </div>
 
@@ -501,7 +688,7 @@ export default function AdminArchivePage() {
                 required
                 value={currentArchive.tahun}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, tahun: parseInt(e.target.value, 10) })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               />
             </div>
             <div>
@@ -510,7 +697,7 @@ export default function AdminArchivePage() {
                 type="text"
                 value={currentArchive.jumlah}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, jumlah: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               />
             </div>
             <div>
@@ -518,22 +705,44 @@ export default function AdminArchivePage() {
               <select
                 value={currentArchive.status_fisik}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, status_fisik: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               >
                 <option value="ASLI">ASLI</option>
                 <option value="COPY">COPY</option>
               </select>
             </div>
             <div>
-              <label className="block font-bold text-[#2D323A] mb-1">SKKAAD</label>
+              <label className="block font-bold text-[#2D323A] mb-1">Status Siklus</label>
               <select
-                value={currentArchive.skkaad}
-                onChange={(e) => setCurrentArchive({ ...currentArchive, skkaad: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                value={currentArchive.jenis_arsip}
+                onChange={(e) => setCurrentArchive({ ...currentArchive, jenis_arsip: e.target.value })}
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               >
-                <option value="Terbuka">Terbuka</option>
-                <option value="Terbatas">Terbatas</option>
-                <option value="Rahasia">Rahasia</option>
+                <option value="INAKTIF">INAKTIF</option>
+                <option value="AKTIF">AKTIF</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div>
+              <label className="block font-bold text-[#2D323A] mb-1">Pencipta Arsip</label>
+              <input
+                type="text"
+                value={currentArchive.pencipta}
+                onChange={(e) => setCurrentArchive({ ...currentArchive, pencipta: e.target.value })}
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-[#2D323A] mb-1">Kategori Pencipta</label>
+              <select
+                value={currentArchive.kategori_pencipta}
+                onChange={(e) => setCurrentArchive({ ...currentArchive, kategori_pencipta: e.target.value })}
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              >
+                <option value="INTERNAL">Internal PUPR</option>
+                <option value="EKSTERNAL">Eksternal (Luar)</option>
               </select>
             </div>
           </div>
@@ -545,17 +754,20 @@ export default function AdminArchivePage() {
                 type="text"
                 value={currentArchive.box}
                 onChange={(e) => setCurrentArchive({ ...currentArchive, box: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
               />
             </div>
             <div>
-              <label className="block font-bold text-[#2D323A] mb-1">Rubrik / Kategori</label>
-              <input
-                type="text"
-                value={currentArchive.rubrik}
-                onChange={(e) => setCurrentArchive({ ...currentArchive, rubrik: e.target.value })}
-                className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
-              />
+              <label className="block font-bold text-[#2D323A] mb-1">SKKAAD</label>
+              <select
+                value={currentArchive.skkaad}
+                onChange={(e) => setCurrentArchive({ ...currentArchive, skkaad: e.target.value })}
+                className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              >
+                <option value="Terbuka">Terbuka</option>
+                <option value="Terbatas">Terbatas</option>
+                <option value="Rahasia">Rahasia</option>
+              </select>
             </div>
           </div>
 
@@ -565,42 +777,33 @@ export default function AdminArchivePage() {
               type="text"
               value={currentArchive.lokasi}
               onChange={(e) => setCurrentArchive({ ...currentArchive, lokasi: e.target.value })}
-              className="w-full p-2.5 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
+              className="w-full p-2 rounded-xl border border-[#E7E5DF] bg-[#FAF9F5] text-xs focus:outline-none"
             />
           </div>
 
-          {/* Bagian Kelola File Digital PDF (Upload & Hapus) */}
-          <div className="p-3.5 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] space-y-2.5">
-            <div className="flex items-center justify-between">
-              <span className="font-bold text-[#1E3A8A] text-xs flex items-center gap-1.5">
-                <FileText className="w-3.5 h-3.5 text-[#2563EB]" />
-                Berkas Digital (Scan PDF)
-              </span>
-              {currentArchive.file_url && (
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
-                  Ada PDF Terlampir
-                </span>
-              )}
-            </div>
+          {/* Bagian PDF */}
+          <div className="p-3 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] space-y-2">
+            <span className="font-bold text-[#1E3A8A] text-xs flex items-center gap-1.5">
+              <FileText className="w-3.5 h-3.5 text-[#2563EB]" />
+              Berkas Digital (Scan PDF)
+            </span>
 
             {currentArchive.file_url ? (
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 bg-white p-2.5 rounded-xl border border-[#BFDBFE]">
+              <div className="flex items-center justify-between bg-white p-2.5 rounded-lg border border-[#BFDBFE]">
                 <a
                   href={currentArchive.file_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs text-[#2563EB] font-bold hover:underline flex items-center gap-1.5"
+                  className="text-xs text-[#2563EB] font-bold hover:underline flex items-center gap-1"
                 >
-                  <Eye className="w-3.5 h-3.5" />
-                  Buka File PDF Saat Ini
+                  <Eye className="w-3.5 h-3.5" /> Buka File PDF
                 </a>
                 <button
                   type="button"
                   onClick={handleRemovePdf}
-                  className="px-2.5 py-1 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 text-xs font-semibold flex items-center gap-1 transition"
+                  className="px-2 py-1 rounded bg-red-50 text-red-700 hover:bg-red-100 border border-red-200 text-xs font-semibold flex items-center gap-1"
                 >
-                  <Trash2 className="w-3 h-3" />
-                  Hapus PDF
+                  <Trash2 className="w-3 h-3" /> Hapus PDF
                 </button>
               </div>
             ) : (
@@ -609,29 +812,29 @@ export default function AdminArchivePage() {
 
             <div>
               <label className="block text-[11px] font-bold text-[#1E3A8A] mb-1">
-                {currentArchive.file_url ? "Ganti / Unggah Ulang Berkas PDF:" : "Unggah Berkas Scan PDF:"}
+                {currentArchive.file_url ? "Ganti File PDF:" : "Pilih File PDF:"}
               </label>
               <input
                 type="file"
                 accept=".pdf"
                 onChange={(e) => setFormPdfFile(e.target.files?.[0] || null)}
-                className="w-full p-2 rounded-xl border border-dashed border-[#BFDBFE] bg-white text-xs text-[#2D323A] file:mr-2.5 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-[#2563EB] file:text-white"
+                className="w-full p-1.5 rounded-lg border border-dashed border-[#BFDBFE] bg-white text-xs text-[#2D323A]"
               />
             </div>
           </div>
 
-          <div className="pt-3 border-t border-[#E7E5DF] flex justify-end gap-2">
+          <div className="pt-2 border-t border-[#E7E5DF] flex justify-end gap-2">
             <button
               type="button"
               onClick={() => setDialogVisible(false)}
-              className="px-4 py-2 rounded-xl bg-[#FAF9F5] text-[#2D323A] text-xs font-semibold"
+              className="px-3.5 py-1.5 rounded-lg bg-[#FAF9F5] text-[#2D323A] text-xs font-semibold"
             >
               Batal
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-sm disabled:opacity-50"
+              className="px-4 py-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-xs disabled:opacity-50"
             >
               {saving ? "Menyimpan..." : "Simpan Data"}
             </button>
@@ -639,16 +842,16 @@ export default function AdminArchivePage() {
         </form>
       </Dialog>
 
-      {/* Dialog Upload Scan PDF Mandiri (Dari tombol aksi tabel) */}
+      {/* Dialog Upload Scan PDF Mandiri */}
       <Dialog
         header={<span className="text-sm font-bold text-[#2D323A]">Unggah Berkas Scan PDF</span>}
         visible={uploadDialogVisible}
         onHide={() => setUploadDialogVisible(false)}
         className="w-[95vw] sm:w-[480px]"
       >
-        <form onSubmit={handleUploadPdf} className="space-y-4 text-xs pt-1">
+        <form onSubmit={handleUploadPdf} className="space-y-3.5 text-xs pt-1">
           <p className="text-[#6C727E]">
-            Pilih file dokumen PDF asli yang sudah dipindai (maksimal 25 MB). Dokumen akan disimpan pada server lokal.
+            Pilih file dokumen PDF asli yang sudah dipindai (maksimal 25 MB).
           </p>
 
           <input
@@ -656,21 +859,21 @@ export default function AdminArchivePage() {
             accept=".pdf"
             required
             onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-            className="w-full p-3 rounded-2xl border border-dashed border-[#E7E5DF] bg-[#FAF9F5] text-xs text-[#2D323A] file:mr-3 file:py-1 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#2563EB] file:text-white"
+            className="w-full p-2.5 rounded-xl border border-dashed border-[#E7E5DF] bg-[#FAF9F5] text-xs text-[#2D323A]"
           />
 
           <div className="pt-2 flex justify-end gap-2">
             <button
               type="button"
               onClick={() => setUploadDialogVisible(false)}
-              className="px-4 py-2 rounded-xl bg-[#FAF9F5] text-[#2D323A] text-xs font-semibold"
+              className="px-3.5 py-1.5 rounded-lg bg-[#FAF9F5] text-[#2D323A] text-xs font-semibold"
             >
               Batal
             </button>
             <button
               type="submit"
               disabled={uploading || !selectedFile}
-              className="px-4 py-2 rounded-xl bg-[#F59E0B] hover:bg-[#D97706] text-white text-xs font-bold shadow-sm disabled:opacity-50"
+              className="px-4 py-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-bold shadow-xs disabled:opacity-50"
             >
               {uploading ? "Mengunggah..." : "Mulai Unggah"}
             </button>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Printer, ArrowLeft, Download, CheckCircle2, LogIn } from "lucide-react";
+import { Printer, ArrowLeft, Download, FileText, LogIn } from "lucide-react";
 
 export default function BeritaAcaraPage() {
   const [archives, setArchives] = useState<any[]>([]);
@@ -12,7 +12,6 @@ export default function BeritaAcaraPage() {
   const [user, setUser] = useState<any | null>(null);
 
   useEffect(() => {
-    // Default state: pengguna publik
     const saved = localStorage.getItem("arsip_user");
     if (saved) {
       try {
@@ -44,22 +43,21 @@ export default function BeritaAcaraPage() {
     window.print();
   };
 
-  // Proteksi Pengguna Publik: Hanya ada jika melakukan login
   if (!user) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl p-8 border border-[#E7E5DF] shadow-sm max-w-md w-full text-center space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto text-xl">
-            📄
+        <div className="bg-white rounded-2xl p-8 border border-[#E7E5DF] shadow-xs max-w-md w-full text-center space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center mx-auto">
+            <FileText className="w-6 h-6" />
           </div>
           <h2 className="text-lg font-bold text-[#2D323A]">Akses Berita Acara Pemusnahan</h2>
           <p className="text-xs text-[#6C727E] leading-relaxed">
-            Penyusunan dan pencetakan Berita Acara Pemusnahan Arsip merupakan wewenang Panitia Penilai Arsip dan Petugas yang telah melakukan login.
+            Penyusunan dan pencetakan Berita Acara Pemusnahan Arsip merupakan wewenang Panitia Penilai Arsip dan Petugas/Operator yang telah melakukan login.
           </p>
           <div className="pt-2">
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-sm transition"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-xs transition"
             >
               <LogIn className="w-4 h-4 text-[#F59E0B]" />
               Masuk / Login Petugas
@@ -74,9 +72,9 @@ export default function BeritaAcaraPage() {
     <div className="space-y-6">
 
       {/* Action Bar (Hidden on Print) */}
-      <div className="print:hidden bg-white rounded-3xl p-5 border border-[#E7E5DF] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="print:hidden bg-white rounded-2xl p-4 sm:p-5 border border-[#E7E5DF] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-lg font-bold text-[#2D323A]">
+          <h1 className="text-base sm:text-lg font-bold text-[#2D323A]">
             Draft Berita Acara Pemusnahan Arsip Inaktif
           </h1>
           <p className="text-xs text-[#6C727E]">
@@ -87,13 +85,13 @@ export default function BeritaAcaraPage() {
         <div className="flex items-center gap-2">
           <Link
             href="/dashboard"
-            className="px-3.5 py-2 rounded-xl bg-[#FAF9F5] hover:bg-white text-[#2D323A] border border-[#E7E5DF] text-xs font-semibold shadow-sm transition"
+            className="px-3.5 py-2 rounded-xl bg-[#FAF9F5] hover:bg-white text-[#2D323A] border border-[#E7E5DF] text-xs font-semibold shadow-xs transition"
           >
             &larr; Dashboard
           </Link>
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-sm transition"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#2D323A] hover:bg-black text-white text-xs font-bold shadow-xs transition"
           >
             <Printer className="w-3.5 h-3.5 text-[#F59E0B]" />
             Cetak Berita Acara (Print)
@@ -102,7 +100,7 @@ export default function BeritaAcaraPage() {
       </div>
 
       {/* Lembar Cetak Dokumen Resmi Berita Acara */}
-      <div className="bg-white rounded-2xl p-8 sm:p-12 border border-[#E7E5DF] shadow-sm text-black print:border-none print:p-0 print:shadow-none space-y-6 max-w-4xl mx-auto">
+      <div className="bg-white rounded-2xl p-8 sm:p-12 border border-[#E7E5DF] shadow-xs text-black print:border-none print:p-0 print:shadow-none space-y-6 max-w-4xl mx-auto">
         
         {/* Kop Surat Kementerian PUPR */}
         <div className="text-center border-b-2 border-black pb-4 space-y-1">

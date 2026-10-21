@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDatabase, ensureDbInitialized } from "@/lib/db";
+import { getDatabase, ensureDbInitialized, normalizeBox } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
 
 export const dynamic = "force-dynamic";
@@ -20,7 +20,14 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     }
 
     const jra = hitungJra(row.tahun, row.kode, row.rubrik, row.judul);
-    return NextResponse.json({ success: true, data: { ...row, jra } });
+    return NextResponse.json({
+      success: true,
+      data: {
+        ...row,
+        box: normalizeBox(row.box),
+        jra,
+      },
+    });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
@@ -51,6 +58,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         status_siklus = ?,
         no_ba_musnah = ?,
         file_url = ?,
+        pencipta = ?,
+        kategori_pencipta = ?,
         updated_at = CURRENT_TIMESTAMP
       WHERE id = ?
     `;
@@ -66,7 +75,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         parseInt(body.tahun, 10),
         body.jumlah,
         body.status_fisik,
-        body.box,
+        normalizeBox(body.box),
         body.skkaad,
         body.lokasi,
         body.rubrik,
@@ -74,6 +83,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         body.status_siklus || "DALAM_RETENSI",
         body.no_ba_musnah || null,
         body.file_url || null,
+        body.pencipta || "Kementerian PUPR",
+        body.kategori_pencipta || "INTERNAL",
         id,
       ],
     });
@@ -99,7 +110,11 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
       sql: "SELECT judul FROM archives WHERE id = ?",
       args: [id],
     });
-    const old = checkRes.rows[0] as any;
+    const item = checkRes.rows[0] as any;
+
+    if (!item) {
+      return NextResponse.json({ success: false, message: "Arsip tidak ditemukan" }, { status: 404 });
+    }
 
     await db.execute({
       sql: "DELETE FROM archives WHERE id = ?",
@@ -108,10 +123,10 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
     await db.execute({
       sql: "INSERT INTO audit_logs (username, action, target_id, details) VALUES ('Operator', 'DELETE', ?, ?)",
-      args: [id, `Menghapus arsip: ${old?.judul || id}`],
+      args: [id, `Menghapus arsip: ${item.judul}`],
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, message: "Arsip berhasil dihapus" });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }

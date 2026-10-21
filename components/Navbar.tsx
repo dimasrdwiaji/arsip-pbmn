@@ -12,7 +12,8 @@ import {
   LogIn, 
   LogOut, 
   Menu, 
-  X
+  X,
+  Building2
 } from "lucide-react";
 
 export default function Navbar() {
@@ -41,7 +42,7 @@ export default function Navbar() {
   };
 
   // Menu publik (tanpa login): Hanya Katalog Publik dan Dashboard JRA
-  // Menu petugas (hanya jika login): Tambahan Panel Petugas, Peta Boks Fisik, dan Berita Acara Pemusnahan
+  // Menu petugas/operator & admin: Tambahan Panel Petugas, Peta Boks Fisik, dan Berita Acara Pemusnahan
   const baseNavLinks = [
     { href: "/", label: "Katalog Publik", icon: Search },
     { href: "/dashboard", label: "Dashboard JRA", icon: BarChart3 },
@@ -61,10 +62,10 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* Logo & Judul Aplikasi (Aksen Soft PU: Biru & Kuning) */}
+            {/* Logo & Judul Aplikasi (Minimalis Aksen Soft PU: Biru & Kuning) */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-[#FEF3C7] border border-[#FDE68A] text-[#D97706] flex items-center justify-center font-bold text-lg shadow-sm transition-transform group-hover:scale-105">
-                🏛️
+              <div className="w-10 h-10 rounded-xl bg-[#FEF3C7] border border-[#FDE68A] text-[#D97706] flex items-center justify-center font-bold shadow-xs transition-transform group-hover:scale-105">
+                <Building2 className="w-5 h-5 text-[#B45309]" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -92,7 +93,7 @@ export default function Navbar() {
                     href={link.href}
                     className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                       isActive
-                        ? "bg-white text-[#2D323A] shadow-sm border border-[#E7E5DF]"
+                        ? "bg-white text-[#2D323A] shadow-xs border border-[#E7E5DF]"
                         : "text-[#6C727E] hover:text-[#2D323A] hover:bg-white/60"
                     }`}
                   >
@@ -113,7 +114,7 @@ export default function Navbar() {
                   </div>
                   <button
                     onClick={handleLogout}
-                    className="p-2 rounded-xl bg-white border border-[#E7E5DF] text-[#6C727E] hover:text-red-600 hover:border-red-200 transition shadow-sm"
+                    className="p-2 rounded-xl bg-white border border-[#E7E5DF] text-[#6C727E] hover:text-red-600 hover:border-red-200 transition shadow-xs"
                     title="Keluar"
                   >
                     <LogOut className="w-4 h-4" />
@@ -122,7 +123,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] text-[#1D4ED8] border border-[#BFDBFE] text-xs font-semibold shadow-sm transition"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] text-[#1D4ED8] border border-[#BFDBFE] text-xs font-semibold shadow-xs transition"
                 >
                   <LogIn className="w-3.5 h-3.5" />
                   Login Petugas
@@ -134,7 +135,7 @@ export default function Navbar() {
             <div className="flex md:hidden items-center gap-2">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl bg-white border border-[#E7E5DF] text-[#2D323A] shadow-sm"
+                className="p-2 rounded-xl bg-white border border-[#E7E5DF] text-[#2D323A] shadow-xs"
                 aria-label="Toggle Menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -157,7 +158,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition ${
                     isActive
-                      ? "bg-white text-[#2D323A] border border-[#E7E5DF] shadow-sm"
+                      ? "bg-white text-[#2D323A] border border-[#E7E5DF] shadow-xs"
                       : "text-[#6C727E] hover:bg-white/60"
                   }`}
                 >
@@ -185,7 +186,7 @@ export default function Navbar() {
                 <Link
                   href="/login"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE] text-xs font-semibold shadow-sm"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#EFF6FF] text-[#1D4ED8] border border-[#BFDBFE] text-xs font-semibold shadow-xs"
                 >
                   <LogIn className="w-4 h-4" />
                   Login Petugas Arsip

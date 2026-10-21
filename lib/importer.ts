@@ -1,7 +1,32 @@
 import path from "path";
 import fs from "fs";
 import * as XLSX from "xlsx";
-import { getDatabase, ensureDbInitialized } from "./db";
+import { getDatabase, ensureDbInitialized, normalizeBox } from "./db";
+
+export function detectPencipta(uraian: string = "", judul: string = ""): { pencipta: string; kategori_pencipta: "INTERNAL" | "EKSTERNAL" } {
+  const text = (uraian + " " + judul).toLowerCase();
+
+  if (text.includes("kementerian agama") || text.includes("kemenag")) return { pencipta: "Kementerian Agama RI", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("kementerian keuangan") || text.includes("kemenkeu")) return { pencipta: "Kementerian Keuangan RI", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("pertanahan") || text.includes("bpn")) return { pencipta: "Kantor Pertanahan / BPN", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("polda") || text.includes("kepolisian") || text.includes("polres")) return { pencipta: "Kepolisian RI", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("pengadilan") || text.includes("mahkamah konstitusi") || text.includes("kejaksaan")) return { pencipta: "Lembaga Peradilan / MK", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("walikota") || text.includes("bupati") || text.includes("pemerintah kota") || text.includes("pemda") || text.includes("provinsi")) return { pencipta: "Pemerintah Daerah", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("pjt ii") || text.includes("pt ") || text.includes("lsm") || text.includes("warga")) return { pencipta: "Mitra / Pihak Ketiga", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("bnpp") || text.includes("badan nasional")) return { pencipta: "BNPP RI", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("setneg") || text.includes("sekretariat negara")) return { pencipta: "Kemensetneg RI", kategori_pencipta: "EKSTERNAL" };
+  if (text.includes("bpk ")) return { pencipta: "BPK RI", kategori_pencipta: "EKSTERNAL" };
+
+  if (text.includes("bu karo") || text.includes("kepala biro")) return { pencipta: "Biro PBMN (Pimpinan)", kategori_pencipta: "INTERNAL" };
+  if (text.includes("cipta karya")) return { pencipta: "Ditjen Cipta Karya PUPR", kategori_pencipta: "INTERNAL" };
+  if (text.includes("sumber daya air") || text.includes("ditjen sda")) return { pencipta: "Ditjen SDA PUPR", kategori_pencipta: "INTERNAL" };
+  if (text.includes("bina marga")) return { pencipta: "Ditjen Bina Marga PUPR", kategori_pencipta: "INTERNAL" };
+  if (text.includes("sekretariat jenderal") || text.includes("sekjen")) return { pencipta: "Sekretariat Jenderal PUPR", kategori_pencipta: "INTERNAL" };
+  if (text.includes("biro pbmn") || text.includes("pmh bmn")) return { pencipta: "Bagian PMH Biro PBMN", kategori_pencipta: "INTERNAL" };
+  if (text.includes("kementerian pu") || text.includes("pupr") || text.includes("departemen pu")) return { pencipta: "Kementerian PUPR", kategori_pencipta: "INTERNAL" };
+
+  return { pencipta: "Internal PUPR", kategori_pencipta: "INTERNAL" };
+}
 
 export async function importExcelToDatabase(filePath?: string): Promise<{ success: boolean; totalImported: number; message: string }> {
   await ensureDbInitialized();
@@ -91,12 +116,14 @@ export async function importExcelToDatabase(filePath?: string): Promise<{ succes
       else skkaadVal = "Terbuka";
 
       let statusFisik = col7.toUpperCase().includes("COPY") ? "COPY" : "ASLI";
+      const pInfo = detectPencipta(col4, col3);
 
       batchStatements.push({
         sql: `INSERT INTO archives (
           no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
-          status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, status_siklus
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI')`,
+          status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, status_siklus,
+          pencipta, kategori_pencipta
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI', ?, ?)`,
         args: [
           col0 || "1",
           col1 || "1",
@@ -106,11 +133,13 @@ export async function importExcelToDatabase(filePath?: string): Promise<{ succes
           tahunVal,
           col6 || "1 berkas",
           statusFisik,
-          boxVal,
+          normalizeBox(boxVal),
           skkaadVal,
           lokasiVal,
           currentSection,
           sheetInfo.jenis,
+          pInfo.pencipta,
+          pInfo.kategori_pencipta,
         ],
       });
 
