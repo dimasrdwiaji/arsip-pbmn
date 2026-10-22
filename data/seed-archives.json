@@ -19,8 +19,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 529,
@@ -43,7 +44,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 530,
@@ -66,7 +68,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 531,
@@ -88,8 +91,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 532,
@@ -112,7 +116,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 533,
@@ -134,8 +139,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 534,
@@ -158,7 +164,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 535,
@@ -181,7 +188,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 536,
@@ -203,8 +211,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 537,
@@ -227,7 +236,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kepolisian RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 538,
@@ -250,7 +260,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kepolisian RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 539,
@@ -273,7 +284,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Lembaga Peradilan / MK",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 540,
@@ -296,7 +308,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 541,
@@ -319,7 +332,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 542,
@@ -342,7 +356,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 543,
@@ -364,8 +379,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 544,
@@ -388,7 +404,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 545,
@@ -411,7 +428,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 546,
@@ -434,7 +452,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 547,
@@ -457,7 +476,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 548,
@@ -480,7 +500,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 549,
@@ -503,7 +524,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 550,
@@ -526,7 +548,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 551,
@@ -549,7 +572,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 552,
@@ -572,7 +596,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 553,
@@ -595,7 +620,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kepolisian RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 554,
@@ -617,8 +643,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 555,
@@ -641,7 +668,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kepolisian RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 556,
@@ -663,8 +691,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 557,
@@ -687,7 +716,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 558,
@@ -709,8 +739,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 559,
@@ -732,8 +763,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 560,
@@ -755,8 +787,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 561,
@@ -778,8 +811,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 562,
@@ -801,8 +835,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 563,
@@ -824,8 +859,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 564,
@@ -847,8 +883,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 565,
@@ -870,8 +907,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 566,
@@ -893,8 +931,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 567,
@@ -916,8 +955,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 568,
@@ -939,8 +979,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 569,
@@ -962,8 +1003,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 570,
@@ -986,7 +1028,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 571,
@@ -1008,8 +1051,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 572,
@@ -1031,8 +1075,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 573,
@@ -1054,8 +1099,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemanfaatan dan Pengamanan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 574,
@@ -1077,8 +1123,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 575,
@@ -1100,8 +1147,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 576,
@@ -1123,8 +1171,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 577,
@@ -1146,8 +1195,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 578,
@@ -1170,7 +1220,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 579,
@@ -1192,8 +1243,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 580,
@@ -1215,8 +1267,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 581,
@@ -1239,7 +1292,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 582,
@@ -1261,8 +1315,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 583,
@@ -1284,8 +1339,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 584,
@@ -1307,8 +1363,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 585,
@@ -1330,8 +1387,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 586,
@@ -1353,8 +1411,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Lembaga Peradilan / MK",
-    "kategori_pencipta": "EKSTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 587,
@@ -1376,8 +1435,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 588,
@@ -1399,8 +1459,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 589,
@@ -1422,8 +1483,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 590,
@@ -1445,8 +1507,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 591,
@@ -1469,7 +1532,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 592,
@@ -1491,8 +1555,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 593,
@@ -1514,8 +1579,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 594,
@@ -1537,8 +1603,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 595,
@@ -1560,8 +1627,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 596,
@@ -1583,8 +1651,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 597,
@@ -1606,8 +1675,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 598,
@@ -1629,8 +1699,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 599,
@@ -1652,8 +1723,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 600,
@@ -1675,8 +1747,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 601,
@@ -1698,8 +1771,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 602,
@@ -1721,8 +1795,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 603,
@@ -1744,8 +1819,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 604,
@@ -1767,8 +1843,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 605,
@@ -1790,8 +1867,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 606,
@@ -1813,8 +1891,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 607,
@@ -1836,8 +1915,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 608,
@@ -1859,8 +1939,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 609,
@@ -1882,8 +1963,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 610,
@@ -1905,8 +1987,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemanfaatan dan Pengamanan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 611,
@@ -1928,8 +2011,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 612,
@@ -1951,8 +2035,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 613,
@@ -1974,8 +2059,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 614,
@@ -1997,8 +2083,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 615,
@@ -2020,8 +2107,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 616,
@@ -2043,8 +2131,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 617,
@@ -2066,8 +2155,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 618,
@@ -2089,8 +2179,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 619,
@@ -2112,8 +2203,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 620,
@@ -2135,8 +2227,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemanfaatan dan Pengamanan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 621,
@@ -2158,8 +2251,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 622,
@@ -2181,8 +2275,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 623,
@@ -2204,8 +2299,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 624,
@@ -2227,8 +2323,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 625,
@@ -2250,8 +2347,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 626,
@@ -2273,8 +2371,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 627,
@@ -2296,8 +2395,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 628,
@@ -2319,8 +2419,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 629,
@@ -2342,8 +2443,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 630,
@@ -2365,8 +2467,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 631,
@@ -2388,8 +2491,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 632,
@@ -2411,8 +2515,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 633,
@@ -2434,8 +2539,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 634,
@@ -2458,7 +2564,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 635,
@@ -2480,8 +2587,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 636,
@@ -2503,8 +2611,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 637,
@@ -2526,8 +2635,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 638,
@@ -2549,8 +2659,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 639,
@@ -2572,8 +2683,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 640,
@@ -2595,8 +2707,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 641,
@@ -2618,8 +2731,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 642,
@@ -2641,8 +2755,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 643,
@@ -2664,8 +2779,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 644,
@@ -2687,8 +2803,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 645,
@@ -2710,8 +2827,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 646,
@@ -2733,8 +2851,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 647,
@@ -2756,8 +2875,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 648,
@@ -2779,8 +2899,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 649,
@@ -2802,8 +2923,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 650,
@@ -2825,8 +2947,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 651,
@@ -2848,8 +2971,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 652,
@@ -2871,8 +2995,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 653,
@@ -2894,8 +3019,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 654,
@@ -2917,8 +3043,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 655,
@@ -2940,8 +3067,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 656,
@@ -2963,8 +3091,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 657,
@@ -2986,8 +3115,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 658,
@@ -3009,8 +3139,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 659,
@@ -3032,8 +3163,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 660,
@@ -3055,8 +3187,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 661,
@@ -3078,8 +3211,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 662,
@@ -3101,8 +3235,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 663,
@@ -3124,8 +3259,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 664,
@@ -3147,8 +3283,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 665,
@@ -3170,8 +3307,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 666,
@@ -3193,8 +3331,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 667,
@@ -3216,8 +3355,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 668,
@@ -3239,8 +3379,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Inspektorat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 669,
@@ -3262,8 +3403,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 670,
@@ -3285,8 +3427,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 671,
@@ -3308,8 +3451,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 672,
@@ -3331,8 +3475,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 673,
@@ -3354,8 +3499,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 674,
@@ -3377,8 +3523,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 675,
@@ -3400,8 +3547,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Inspektorat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 676,
@@ -3423,8 +3571,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Inspektorat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 677,
@@ -3446,8 +3595,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 678,
@@ -3469,8 +3619,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 679,
@@ -3493,7 +3644,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 680,
@@ -3515,8 +3667,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 681,
@@ -3538,8 +3691,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 682,
@@ -3561,8 +3715,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 683,
@@ -3584,8 +3739,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 684,
@@ -3607,8 +3763,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 685,
@@ -3630,8 +3787,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 686,
@@ -3653,8 +3811,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 687,
@@ -3676,8 +3835,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 688,
@@ -3700,7 +3860,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 689,
@@ -3723,7 +3884,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 690,
@@ -3745,8 +3907,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 691,
@@ -3769,7 +3932,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 692,
@@ -3791,8 +3955,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 693,
@@ -3815,7 +3980,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 694,
@@ -3837,8 +4003,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 695,
@@ -3861,7 +4028,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 696,
@@ -3883,8 +4051,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 697,
@@ -3906,8 +4075,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 698,
@@ -3929,8 +4099,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 699,
@@ -3952,8 +4123,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 700,
@@ -3975,8 +4147,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 701,
@@ -3998,8 +4171,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 702,
@@ -4021,8 +4195,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 703,
@@ -4044,8 +4219,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 704,
@@ -4067,8 +4243,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 705,
@@ -4090,8 +4267,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 706,
@@ -4113,8 +4291,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 707,
@@ -4136,8 +4315,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 708,
@@ -4159,8 +4339,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 709,
@@ -4182,8 +4363,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 710,
@@ -4205,8 +4387,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 711,
@@ -4228,8 +4411,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 712,
@@ -4251,8 +4435,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 713,
@@ -4274,8 +4459,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 714,
@@ -4297,8 +4483,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 715,
@@ -4320,8 +4507,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 716,
@@ -4343,8 +4531,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 717,
@@ -4366,8 +4555,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Inspektorat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 718,
@@ -4389,8 +4579,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 719,
@@ -4412,8 +4603,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 720,
@@ -4435,8 +4627,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 721,
@@ -4458,8 +4651,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 722,
@@ -4481,8 +4675,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 723,
@@ -4505,7 +4700,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 724,
@@ -4527,8 +4723,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 725,
@@ -4550,8 +4747,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 726,
@@ -4573,8 +4771,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 727,
@@ -4596,8 +4795,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 728,
@@ -4619,8 +4819,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 729,
@@ -4642,8 +4843,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 730,
@@ -4666,7 +4868,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 731,
@@ -4688,8 +4891,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 732,
@@ -4711,8 +4915,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 733,
@@ -4734,8 +4939,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 734,
@@ -4757,8 +4963,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 735,
@@ -4780,8 +4987,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 736,
@@ -4803,8 +5011,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 737,
@@ -4827,7 +5036,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 738,
@@ -4849,8 +5059,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 739,
@@ -4872,8 +5083,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 740,
@@ -4895,8 +5107,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 741,
@@ -4918,8 +5131,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 742,
@@ -4942,7 +5156,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 743,
@@ -4964,8 +5179,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 744,
@@ -4987,8 +5203,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 745,
@@ -5010,8 +5227,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 746,
@@ -5033,8 +5251,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 747,
@@ -5057,7 +5276,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 748,
@@ -5079,8 +5299,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 749,
@@ -5102,8 +5323,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 750,
@@ -5125,8 +5347,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 751,
@@ -5148,8 +5371,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 752,
@@ -5171,8 +5395,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 753,
@@ -5194,8 +5419,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 754,
@@ -5217,8 +5443,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 755,
@@ -5240,8 +5467,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 756,
@@ -5263,8 +5491,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 757,
@@ -5286,8 +5515,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 758,
@@ -5310,7 +5540,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 759,
@@ -5332,8 +5563,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Bina Marga PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Bina Marga",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 760,
@@ -5355,8 +5587,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 761,
@@ -5378,8 +5611,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 762,
@@ -5401,8 +5635,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 763,
@@ -5424,8 +5659,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 764,
@@ -5447,8 +5683,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 765,
@@ -5470,8 +5707,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 766,
@@ -5493,8 +5731,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 767,
@@ -5516,8 +5755,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 768,
@@ -5539,8 +5779,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 769,
@@ -5562,8 +5803,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 770,
@@ -5585,8 +5827,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 771,
@@ -5608,8 +5851,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 772,
@@ -5632,7 +5876,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 773,
@@ -5654,8 +5899,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 774,
@@ -5678,7 +5924,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 775,
@@ -5700,8 +5947,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 776,
@@ -5723,8 +5971,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 777,
@@ -5746,8 +5995,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 778,
@@ -5769,8 +6019,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 779,
@@ -5792,8 +6043,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 780,
@@ -5815,8 +6067,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 781,
@@ -5838,8 +6091,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Penatausahaan, Penggunaan, dan Rencana Kebutuhan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 782,
@@ -5861,8 +6115,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 783,
@@ -5885,7 +6140,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 784,
@@ -5907,8 +6163,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 785,
@@ -5930,8 +6187,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 786,
@@ -5953,8 +6211,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 787,
@@ -5976,8 +6235,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 788,
@@ -5999,8 +6259,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 789,
@@ -6023,7 +6284,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 790,
@@ -6045,8 +6307,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 791,
@@ -6069,7 +6332,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 792,
@@ -6091,8 +6355,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 793,
@@ -6114,8 +6379,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 794,
@@ -6137,8 +6403,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 795,
@@ -6160,8 +6427,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 796,
@@ -6183,8 +6451,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 797,
@@ -6206,8 +6475,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 798,
@@ -6229,8 +6499,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 799,
@@ -6253,7 +6524,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 800,
@@ -6276,7 +6548,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 801,
@@ -6299,7 +6572,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 802,
@@ -6322,7 +6596,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "BPK RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 803,
@@ -6344,8 +6619,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 804,
@@ -6367,8 +6643,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 805,
@@ -6390,8 +6667,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 806,
@@ -6413,8 +6691,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 807,
@@ -6436,8 +6715,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 808,
@@ -6459,8 +6739,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 809,
@@ -6483,7 +6764,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 810,
@@ -6505,8 +6787,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Bina Marga PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Bina Marga",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 811,
@@ -6529,7 +6812,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 812,
@@ -6551,8 +6835,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 813,
@@ -6574,8 +6859,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 814,
@@ -6598,7 +6884,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 815,
@@ -6621,7 +6908,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 816,
@@ -6643,8 +6931,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 817,
@@ -6666,8 +6955,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 818,
@@ -6689,8 +6979,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 819,
@@ -6713,7 +7004,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 820,
@@ -6736,7 +7028,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 821,
@@ -6759,7 +7052,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 822,
@@ -6782,7 +7076,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 823,
@@ -6805,7 +7100,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 824,
@@ -6828,7 +7124,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 825,
@@ -6851,7 +7148,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 826,
@@ -6873,8 +7171,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 827,
@@ -6896,8 +7195,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 828,
@@ -6919,8 +7219,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 829,
@@ -6942,8 +7243,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 830,
@@ -6966,7 +7268,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 831,
@@ -6988,8 +7291,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 832,
@@ -7011,8 +7315,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 833,
@@ -7035,7 +7340,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 834,
@@ -7057,8 +7363,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 835,
@@ -7080,8 +7387,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 836,
@@ -7104,7 +7412,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 837,
@@ -7127,7 +7436,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 838,
@@ -7150,7 +7460,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 839,
@@ -7172,8 +7483,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 840,
@@ -7196,7 +7508,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 841,
@@ -7218,8 +7531,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 842,
@@ -7241,8 +7555,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 843,
@@ -7265,7 +7580,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 844,
@@ -7288,7 +7604,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 845,
@@ -7311,7 +7628,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 846,
@@ -7333,8 +7651,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 847,
@@ -7357,7 +7676,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 848,
@@ -7379,8 +7699,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 849,
@@ -7403,7 +7724,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 850,
@@ -7426,7 +7748,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 851,
@@ -7449,7 +7772,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 852,
@@ -7472,7 +7796,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 853,
@@ -7495,7 +7820,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 854,
@@ -7517,8 +7843,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 855,
@@ -7540,8 +7867,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 856,
@@ -7564,7 +7892,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 857,
@@ -7587,7 +7916,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 858,
@@ -7610,7 +7940,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 859,
@@ -7633,7 +7964,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 860,
@@ -7656,7 +7988,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 861,
@@ -7679,7 +8012,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 862,
@@ -7702,7 +8036,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 863,
@@ -7725,7 +8060,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 864,
@@ -7747,8 +8083,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 865,
@@ -7771,7 +8108,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Bagian PMH Biro PBMN",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 866,
@@ -7793,8 +8131,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 867,
@@ -7816,8 +8155,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 868,
@@ -7839,8 +8179,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 869,
@@ -7862,8 +8203,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 870,
@@ -7886,7 +8228,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 871,
@@ -7908,8 +8251,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 872,
@@ -7931,8 +8275,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 873,
@@ -7955,7 +8300,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 874,
@@ -7978,7 +8324,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 875,
@@ -8000,8 +8347,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 876,
@@ -8023,8 +8371,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 877,
@@ -8047,7 +8396,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 878,
@@ -8070,7 +8420,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 879,
@@ -8093,7 +8444,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 880,
@@ -8116,7 +8468,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 881,
@@ -8139,7 +8492,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 882,
@@ -8161,8 +8515,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 883,
@@ -8185,7 +8540,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 884,
@@ -8208,7 +8564,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 885,
@@ -8230,8 +8587,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 886,
@@ -8253,8 +8611,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 887,
@@ -8276,8 +8635,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 888,
@@ -8300,7 +8660,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 889,
@@ -8323,7 +8684,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 890,
@@ -8346,7 +8708,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 891,
@@ -8368,8 +8731,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 892,
@@ -8392,7 +8756,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 893,
@@ -8415,7 +8780,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 894,
@@ -8437,8 +8803,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 895,
@@ -8461,7 +8828,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 896,
@@ -8483,8 +8851,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 897,
@@ -8507,7 +8876,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 898,
@@ -8530,7 +8900,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 899,
@@ -8552,8 +8923,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 900,
@@ -8575,8 +8947,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 901,
@@ -8598,8 +8971,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 902,
@@ -8621,8 +8995,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 903,
@@ -8645,7 +9020,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 904,
@@ -8668,7 +9044,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 905,
@@ -8691,7 +9068,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 906,
@@ -8714,7 +9092,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 907,
@@ -8737,7 +9116,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 908,
@@ -8760,7 +9140,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 909,
@@ -8783,7 +9164,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 910,
@@ -8805,8 +9187,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 911,
@@ -8829,7 +9212,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 912,
@@ -8852,7 +9236,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 913,
@@ -8875,7 +9260,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 914,
@@ -8898,7 +9284,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 915,
@@ -8921,7 +9308,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 916,
@@ -8943,8 +9331,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 917,
@@ -8966,8 +9355,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 918,
@@ -8990,7 +9380,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 919,
@@ -9012,8 +9403,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 920,
@@ -9035,8 +9427,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 921,
@@ -9058,8 +9451,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 922,
@@ -9081,8 +9475,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 923,
@@ -9104,8 +9499,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 924,
@@ -9127,8 +9523,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 925,
@@ -9151,7 +9548,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 926,
@@ -9174,7 +9572,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 927,
@@ -9196,8 +9595,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 928,
@@ -9220,7 +9620,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 929,
@@ -9242,8 +9643,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 930,
@@ -9265,8 +9667,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Bagian PMH Biro PBMN",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 931,
@@ -9288,8 +9691,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 932,
@@ -9311,8 +9715,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 933,
@@ -9334,8 +9739,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 934,
@@ -9357,8 +9763,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 935,
@@ -9381,7 +9788,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 936,
@@ -9404,7 +9812,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 937,
@@ -9426,8 +9835,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 938,
@@ -9449,8 +9859,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 939,
@@ -9472,8 +9883,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 940,
@@ -9495,8 +9907,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 941,
@@ -9518,8 +9931,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 942,
@@ -9541,8 +9955,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 943,
@@ -9564,8 +9979,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 944,
@@ -9588,7 +10004,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 945,
@@ -9610,8 +10027,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 946,
@@ -9633,8 +10051,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 947,
@@ -9656,8 +10075,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 948,
@@ -9679,8 +10099,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 949,
@@ -9703,7 +10124,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 950,
@@ -9726,7 +10148,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 951,
@@ -9749,7 +10172,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 952,
@@ -9772,7 +10196,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 953,
@@ -9795,7 +10220,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 954,
@@ -9818,7 +10244,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 955,
@@ -9840,8 +10267,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 956,
@@ -9864,7 +10292,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 957,
@@ -9887,7 +10316,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 958,
@@ -9910,7 +10340,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 959,
@@ -9933,7 +10364,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 960,
@@ -9956,7 +10388,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 961,
@@ -9979,7 +10412,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 962,
@@ -10002,7 +10436,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 963,
@@ -10025,7 +10460,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 964,
@@ -10047,8 +10483,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 965,
@@ -10070,8 +10507,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 966,
@@ -10094,7 +10532,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Lembaga Peradilan / MK",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 967,
@@ -10116,8 +10555,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 968,
@@ -10140,7 +10580,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Agama RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 969,
@@ -10163,7 +10604,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 970,
@@ -10185,8 +10627,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Penatausahaan, Penggunaan, dan Rencana Kebutuhan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 971,
@@ -10209,7 +10652,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kemensetneg RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 972,
@@ -10231,8 +10675,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 973,
@@ -10255,7 +10700,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Agama RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 974,
@@ -10277,8 +10723,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "BNPP RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 975,
@@ -10301,7 +10748,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kementerian Keuangan RI",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 976,
@@ -10323,8 +10771,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Perumahan",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 977,
@@ -10346,8 +10795,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 978,
@@ -10369,8 +10819,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 979,
@@ -10393,7 +10844,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 980,
@@ -10415,8 +10867,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 981,
@@ -10438,8 +10891,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 982,
@@ -10461,8 +10915,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Penatausahaan, Penggunaan, dan Rencana Kebutuhan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 983,
@@ -10485,7 +10940,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 984,
@@ -10507,8 +10963,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 985,
@@ -10530,8 +10987,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Sekretariat Jenderal Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 986,
@@ -10553,8 +11011,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 987,
@@ -10577,7 +11036,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 988,
@@ -10599,8 +11059,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 989,
@@ -10623,7 +11084,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 990,
@@ -10646,7 +11108,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 991,
@@ -10668,8 +11131,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Sekretariat Jenderal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemindahtanganan, Pemusnahan, dan Penghapusan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 992,
@@ -10692,7 +11156,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen SDA PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 993,
@@ -10714,8 +11179,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 994,
@@ -10738,7 +11204,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 995,
@@ -10760,8 +11227,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 996,
@@ -10783,8 +11251,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 997,
@@ -10806,8 +11275,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Instansi / Lembaga Eksternal",
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 998,
@@ -10830,7 +11300,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 999,
@@ -10852,8 +11323,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Kementerian PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1000,
@@ -10875,8 +11347,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1001,
@@ -10899,7 +11372,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1002,
@@ -10922,7 +11396,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1003,
@@ -10945,7 +11420,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1004,
@@ -10967,8 +11443,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1005,
@@ -10990,8 +11467,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1006,
@@ -11013,8 +11491,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1007,
@@ -11037,7 +11516,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1008,
@@ -11060,7 +11540,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1009,
@@ -11083,7 +11564,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1010,
@@ -11106,7 +11588,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1011,
@@ -11129,7 +11612,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1012,
@@ -11152,7 +11636,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1013,
@@ -11174,8 +11659,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1014,
@@ -11198,7 +11684,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1015,
@@ -11220,8 +11707,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1016,
@@ -11243,8 +11731,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1017,
@@ -11267,7 +11756,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1018,
@@ -11290,7 +11780,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1019,
@@ -11312,8 +11803,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1020,
@@ -11335,8 +11827,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1021,
@@ -11359,7 +11852,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1022,
@@ -11381,8 +11875,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1023,
@@ -11405,7 +11900,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1024,
@@ -11427,8 +11923,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1025,
@@ -11451,7 +11948,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1026,
@@ -11474,7 +11972,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1027,
@@ -11496,8 +11995,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1028,
@@ -11519,8 +12019,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Sumber Daya Air",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1029,
@@ -11542,8 +12043,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1030,
@@ -11565,8 +12067,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Biro Pengelolaan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1031,
@@ -11588,8 +12091,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1032,
@@ -11612,7 +12116,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1033,
@@ -11635,7 +12140,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1034,
@@ -11658,7 +12164,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1035,
@@ -11681,7 +12188,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1036,
@@ -11703,8 +12211,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemanfaatan dan Pengamanan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1037,
@@ -11727,7 +12236,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Mitra / Pihak Ketiga",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1038,
@@ -11749,8 +12259,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1039,
@@ -11772,8 +12283,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1040,
@@ -11796,7 +12308,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Pemerintah Daerah",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1041,
@@ -11818,8 +12331,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1042,
@@ -11842,7 +12356,8 @@
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
     "pencipta": "Kantor Pertanahan / BPN",
-    "kategori_pencipta": "EKSTERNAL"
+    "kategori_pencipta": "EKSTERNAL",
+    "kategori_pencipta_3": "Eksternal"
   },
   {
     "id": 1043,
@@ -11864,8 +12379,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1044,
@@ -11887,8 +12403,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1045,
@@ -11910,8 +12427,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1046,
@@ -11933,8 +12451,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Unit Organisasi Kementerian PU",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1047,
@@ -11956,8 +12475,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Internal PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN (Kementerian PU)",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1048,
@@ -11979,8 +12499,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1049,
@@ -12002,8 +12523,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1050,
@@ -12025,8 +12547,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1051,
@@ -12048,8 +12571,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1052,
@@ -12071,8 +12595,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Biro PBMN (Pimpinan)",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Biro Pengelolaan BMN - Bagian Pemanfaatan dan Pengamanan BMN",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Biro PBMN"
   },
   {
     "id": 1053,
@@ -12094,8 +12619,9 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   },
   {
     "id": 1054,
@@ -12117,7 +12643,8 @@
     "no_ba_musnah": null,
     "created_at": "2026-10-21 06:31:41",
     "updated_at": "2026-10-21 06:31:41",
-    "pencipta": "Ditjen Cipta Karya PUPR",
-    "kategori_pencipta": "INTERNAL"
+    "pencipta": "Kementerian PU - Ditjen Cipta Karya",
+    "kategori_pencipta": "INTERNAL",
+    "kategori_pencipta_3": "Kementerian PU"
   }
 ]

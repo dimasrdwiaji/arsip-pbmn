@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDatabase, ensureDbInitialized, normalizeBox } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+import { classifyCreator } from "@/lib/creator";
 
 export const dynamic = "force-dynamic";
 
@@ -20,11 +21,17 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     }
 
     const jra = hitungJra(row.tahun, row.kode, row.rubrik, row.judul);
+    let kat3 = row.kategori_pencipta_3;
+    if (!kat3) {
+      kat3 = classifyCreator(row.judul, row.uraian, row.rubrik, row.pencipta).kategori;
+    }
+
     return NextResponse.json({
       success: true,
       data: {
         ...row,
         box: normalizeBox(row.box),
+        kategori_pencipta_3: kat3,
         jra,
       },
     });
@@ -39,6 +46,11 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     const db = getDatabase();
     const id = parseInt(params.id, 10);
     const body = await req.json();
+
+    const creatorCls = classifyCreator(body.judul || "", body.uraian || "", body.rubrik || "", body.pencipta || "");
+    const kat3 = body.kategori_pencipta_3 || creatorCls.kategori;
+    const kat2 = kat3 === "Eksternal" ? "EKSTERNAL" : "INTERNAL";
+    const pencipta = body.pencipta || creatorCls.namaLengkap;
 
     const updateSql = `
       UPDATE archives SET
@@ -60,6 +72,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         file_url = ?,
         pencipta = ?,
         kategori_pencipta = ?,
+        kategori_pencipta_3 = ?,
         updated_at = CURRENT_TIMESTAMP
       WHERE id = ?
     `;
@@ -83,8 +96,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         body.status_siklus || "DALAM_RETENSI",
         body.no_ba_musnah || null,
         body.file_url || null,
-        body.pencipta || "Kementerian PUPR",
-        body.kategori_pencipta || "INTERNAL",
+        pencipta,
+        kat2,
+        kat3,
         id,
       ],
     });

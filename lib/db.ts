@@ -78,6 +78,7 @@ export async function ensureDbInitialized(): Promise<void> {
       no_ba_musnah TEXT,
       pencipta TEXT DEFAULT 'Kementerian PUPR',
       kategori_pencipta TEXT DEFAULT 'INTERNAL',
+      kategori_pencipta_3 TEXT DEFAULT 'Biro PBMN',
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
@@ -88,6 +89,7 @@ export async function ensureDbInitialized(): Promise<void> {
       password TEXT NOT NULL,
       nama_lengkap TEXT NOT NULL,
       role TEXT NOT NULL DEFAULT 'OPERATOR',
+      status TEXT NOT NULL DEFAULT 'Aktif',
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 
@@ -114,16 +116,22 @@ export async function ensureDbInitialized(): Promise<void> {
   try {
     await db.execute("ALTER TABLE archives ADD COLUMN kategori_pencipta TEXT DEFAULT 'INTERNAL'");
   } catch (e) {}
+  try {
+    await db.execute("ALTER TABLE archives ADD COLUMN kategori_pencipta_3 TEXT DEFAULT 'Biro PBMN'");
+  } catch (e) {}
+  try {
+    await db.execute("ALTER TABLE users ADD COLUMN status TEXT DEFAULT 'Aktif'");
+  } catch (e) {}
 
   // Pastikan user admin dan petugas ada
   const userCount = await db.execute("SELECT COUNT(*) as count FROM users");
   if (Number(userCount.rows[0]?.count || 0) === 0) {
     await db.execute({
-      sql: "INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)",
+      sql: "INSERT INTO users (username, password, nama_lengkap, role, status) VALUES (?, ?, ?, ?, 'Aktif')",
       args: ["admin", "admin123", "Administrator PBMN", "ADMIN"],
     });
     await db.execute({
-      sql: "INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)",
+      sql: "INSERT INTO users (username, password, nama_lengkap, role, status) VALUES (?, ?, ?, ?, 'Aktif')",
       args: ["petugas", "petugas123", "Arsiparis PMH", "OPERATOR"],
     });
   }
@@ -137,8 +145,8 @@ export async function ensureDbInitialized(): Promise<void> {
       sql: `INSERT INTO archives (
         id, no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
         status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus,
-        pencipta, kategori_pencipta
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        pencipta, kategori_pencipta, kategori_pencipta_3
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       args: [
         item.id,
         item.no_berkas || "1",
@@ -158,6 +166,7 @@ export async function ensureDbInitialized(): Promise<void> {
         item.status_siklus || "DALAM_RETENSI",
         item.pencipta || "Kementerian PUPR",
         item.kategori_pencipta || "INTERNAL",
+        item.kategori_pencipta_3 || "Biro PBMN",
       ],
     }));
 
@@ -173,6 +182,23 @@ export async function ensureDbInitialized(): Promise<void> {
     });
 
     console.log(`Auto-seeding selesai: ${seedArchives.length} arsip terdaftar.`);
+  } else {
+    // Jika data sudah ada tapi kategori_pencipta_3 belum terisi, lakukan sinkronisasi ringan
+    try {
+      await db.execute(`
+        UPDATE archives 
+        SET kategori_pencipta_3 = CASE
+          WHEN kategori_pencipta = 'EKSTERNAL' THEN 'Eksternal'
+          WHEN LOWER(judul || ' ' || COALESCE(uraian,'')) LIKE '%cipta karya%' 
+            OR LOWER(judul || ' ' || COALESCE(uraian,'')) LIKE '%sumber daya air%' 
+            OR LOWER(judul || ' ' || COALESCE(uraian,'')) LIKE '%bina marga%' 
+            OR LOWER(judul || ' ' || COALESCE(uraian,'')) LIKE '%perumahan%' 
+            OR LOWER(judul || ' ' || COALESCE(uraian,'')) LIKE '%balai%' THEN 'Kementerian PU'
+          ELSE 'Biro PBMN'
+        END
+        WHERE kategori_pencipta_3 IS NULL OR kategori_pencipta_3 = '';
+      `);
+    } catch (e) {}
   }
 
   isInitialized = true;

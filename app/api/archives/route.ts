@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDatabase, ensureDbInitialized, normalizeBox } from "@/lib/db";
 import { hitungJra } from "@/lib/jra";
+import { classifyCreator } from "@/lib/creator";
 
 export const dynamic = "force-dynamic";
 
@@ -62,11 +63,6 @@ export async function GET(req: NextRequest) {
       params.push(`%${kode.replace(/\s+/g, '')}%`);
     }
 
-    if (penciptaKategori && penciptaKategori !== "ALL") {
-      query += " AND kategori_pencipta = ?";
-      params.push(penciptaKategori);
-    }
-
     if (jenisArsip && jenisArsip !== "ALL") {
       query += " AND jenis_arsip = ?";
       params.push(jenisArsip);
@@ -77,15 +73,33 @@ export async function GET(req: NextRequest) {
     const res = await db.execute({ sql: query, args: params });
     const rows = res.rows as any[];
 
-    // Hitung JRA untuk setiap baris
-    const results = rows.map((r) => {
+    // Hitung JRA dan lengkapi kategori pencipta 3 tingkat
+    let results = rows.map((r) => {
       const jra = hitungJra(r.tahun, r.kode, r.rubrik, r.judul);
+      let kat3 = r.kategori_pencipta_3;
+      if (!kat3) {
+        kat3 = classifyCreator(r.judul, r.uraian, r.rubrik, r.pencipta).kategori;
+      }
       return {
         ...r,
         box: normalizeBox(r.box),
+        kategori_pencipta_3: kat3,
         jra,
       };
     });
+
+    // Filter Pencipta (mendukung 'Biro PBMN', 'Kementerian PU', 'Eksternal')
+    if (penciptaKategori && penciptaKategori !== "ALL") {
+      results = results.filter((item) => {
+        if (penciptaKategori === "INTERNAL") {
+          return item.kategori_pencipta === "INTERNAL" || item.kategori_pencipta_3 !== "Eksternal";
+        }
+        if (penciptaKategori === "EKSTERNAL") {
+          return item.kategori_pencipta === "EKSTERNAL" || item.kategori_pencipta_3 === "Eksternal";
+        }
+        return item.kategori_pencipta_3 === penciptaKategori;
+      });
+    }
 
     // Filter JRA di memory jika ada parameter jra
     const filtered = jraStatus && jraStatus !== "ALL"
@@ -108,12 +122,17 @@ export async function POST(req: NextRequest) {
     const db = getDatabase();
     const body = await req.json();
 
+    const creatorCls = classifyCreator(body.judul || "", body.uraian || "", body.rubrik || "", body.pencipta || "");
+    const kat3 = body.kategori_pencipta_3 || creatorCls.kategori;
+    const kat2 = kat3 === "Eksternal" ? "EKSTERNAL" : "INTERNAL";
+    const pencipta = body.pencipta || creatorCls.namaLengkap;
+
     const insertSql = `
       INSERT INTO archives (
         no_berkas, no_urut, kode, judul, uraian, tahun, jumlah,
         status_fisik, box, skkaad, lokasi, rubrik, jenis_arsip, file_url, status_siklus,
-        pencipta, kategori_pencipta
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI', ?, ?)
+        pencipta, kategori_pencipta, kategori_pencipta_3
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'DALAM_RETENSI', ?, ?, ?)
     `;
 
     const res = await db.execute({
@@ -133,8 +152,9 @@ export async function POST(req: NextRequest) {
         body.rubrik || "UMUM",
         body.jenis_arsip || "INAKTIF",
         body.file_url || null,
-        body.pencipta || "Kementerian PUPR",
-        body.kategori_pencipta || "INTERNAL",
+        pencipta,
+        kat2,
+        kat3,
       ],
     });
 

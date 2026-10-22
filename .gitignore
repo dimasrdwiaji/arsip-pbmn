@@ -33,3 +33,5 @@ Thumbs.db
 
 # Token
 token.json
+
+*.tsbuildinfo
